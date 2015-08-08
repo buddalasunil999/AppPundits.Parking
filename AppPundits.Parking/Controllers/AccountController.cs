@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using AspNet.Identity.MySQL;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
@@ -75,44 +75,44 @@ namespace AppPundits.Parking.Controllers
         }
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
-        [Route("ManageInfo")]
-        public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
-        {
-            IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+        //[Route("ManageInfo")]
+        //public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
+        //{
+        //    IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
-            if (user == null)
-            {
-                return null;
-            }
+        //    if (user == null)
+        //    {
+        //        return null;
+        //    }
 
-            List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
+        //    List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (IdentityUserLogin linkedAccount in user.Logins)
-            {
-                logins.Add(new UserLoginInfoViewModel
-                {
-                    LoginProvider = linkedAccount.LoginProvider,
-                    ProviderKey = linkedAccount.ProviderKey
-                });
-            }
+        //    foreach (IdentityUserLogin linkedAccount in user.Logins)
+        //    {
+        //        logins.Add(new UserLoginInfoViewModel
+        //        {
+        //            LoginProvider = linkedAccount.LoginProvider,
+        //            ProviderKey = linkedAccount.ProviderKey
+        //        });
+        //    }
 
-            if (user.PasswordHash != null)
-            {
-                logins.Add(new UserLoginInfoViewModel
-                {
-                    LoginProvider = LocalLoginProvider,
-                    ProviderKey = user.UserName,
-                });
-            }
+        //    if (user.PasswordHash != null)
+        //    {
+        //        logins.Add(new UserLoginInfoViewModel
+        //        {
+        //            LoginProvider = LocalLoginProvider,
+        //            ProviderKey = user.UserName,
+        //        });
+        //    }
 
-            return new ManageInfoViewModel
-            {
-                LocalLoginProvider = LocalLoginProvider,
-                Email = user.UserName,
-                Logins = logins,
-                ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
-            };
-        }
+        //    return new ManageInfoViewModel
+        //    {
+        //        LocalLoginProvider = LocalLoginProvider,
+        //        Email = user.UserName,
+        //        Logins = logins,
+        //        ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
+        //    };
+        //}
 
         // POST api/Account/ChangePassword
         [Route("ChangePassword")]
