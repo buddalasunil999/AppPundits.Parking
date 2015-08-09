@@ -10,7 +10,7 @@ namespace AppPundits.Parking.Models
         [Key]
         public string BreachNo { set; get; }
         public string CarRegNo { set; get; }
-        public string CarTpye { set; get; }
+        public int CarType { set; get; }
         public int CustomerId { set; get; }
         public double OffenseAmount { set; get; }
         public int ParkingBuildingId { set; get; }

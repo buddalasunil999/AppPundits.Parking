@@ -211,8 +211,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarTypesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\InfringementsController.cs" />
+    <Compile Include="Controllers\OffensesController.cs" />
+    <Compile Include="Controllers\ParkingBuildingsController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,10 +225,15 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CarType.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\CustomerRepository.cs" />
+    <Compile Include="Models\Repositories\CarTypeRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Infringement.cs" />
     <Compile Include="Models\Offense.cs" />
+    <Compile Include="Models\Repositories\CustomerRepository.cs" />
+    <Compile Include="Models\Repositories\InfringementRepository.cs" />
+    <Compile Include="Models\Repositories\OffenseRepository.cs" />
+    <Compile Include="Models\Repositories\ParkingBuildingRepository.cs" />
+    <Compile Include="Models\Repositories\TransactionRepository.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\ParkingBuilding.cs" />
     <Compile Include="Models\ParkingDbContext.cs" />
@@ -239,8 +249,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -260,9 +268,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -293,14 +305,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\Identity\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj">

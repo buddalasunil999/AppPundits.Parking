@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppPundits.Parking.Models
 {
-    [Table("infringement")]
+    [Table("offense")]
     public class Offense
     {
         [Key]
