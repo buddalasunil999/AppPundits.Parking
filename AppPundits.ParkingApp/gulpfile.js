@@ -31,6 +31,10 @@ gulp.task('watch', function () {
     return gulp.watch(config.src, ['scripts']);
 });
 
+gulp.task('browser', ['scripts'], function () {
+    reload()
+});
+
 // Watch scss AND html files, doing different things with each.
 gulp.task('serve', ['scripts'], function () {
 
@@ -41,7 +45,7 @@ gulp.task('serve', ['scripts'], function () {
         }
     });
 
-    gulp.watch(config.src, ['scripts']).on("change", browserSync.reload);
+    gulp.watch(config.src, ['browser']);
 });
 
 //Set a default tasks
