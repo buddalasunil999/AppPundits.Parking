@@ -30,7 +30,7 @@
 
         $scope.openaddcar = function () {
             var modalInstance = $modal.open({
-                templateUrl: 'myModalContent.html',
+                templateUrl: '/app/settings/addcartype.html',
                 controller: 'cartypecontroller',
                 resolve: {
                     items: function () {
@@ -45,5 +45,37 @@
                 log('New car type added with id ' + $scope.selected.Id);
             });
         };
+
+        $scope.removecartype = function (id) {
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                size: 'sm',
+                resolve: {
+                    items: function () {
+                        return '';
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                datacontext.removecartype(id).then(function () {
+                    //$dialogs.notify('Selected car type is removed.');
+                    log('Selected car type is removed.');
+                });
+            });
+        };
     }]);
+
+    angular.module('app').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function ($scope, $modalInstance, items) {
+
+        $scope.ok = function () {
+            $modalInstance.close('ok');
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }]);
+
 })();

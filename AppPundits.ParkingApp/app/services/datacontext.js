@@ -26,6 +26,11 @@
 
                 return $q.when(message);
             },
+            removecartype: function (id) {
+                return $http.delete('http://localhost:2239/api/cartypes/' + id).then(function (response) {
+                    return response;
+                });
+            },
             getMessageCount: getMessageCount
         };
 
