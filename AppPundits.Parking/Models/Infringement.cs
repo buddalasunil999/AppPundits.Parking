@@ -8,6 +8,7 @@ namespace AppPundits.Parking.Models
     public class Infringement
     {
         [Key]
+        public int Id { set; get; }
         public string BreachNo { set; get; }
         public string CarRegNo { set; get; }
         public int CarType { set; get; }

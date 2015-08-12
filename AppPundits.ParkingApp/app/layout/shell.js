@@ -25,7 +25,7 @@
         activate();
 
         function activate() {
-            logSuccess('Portal loaded!', null, true);
+            //logSuccess('Portal loaded!', null, true);
             common.activateController([], controllerId);
         }
 

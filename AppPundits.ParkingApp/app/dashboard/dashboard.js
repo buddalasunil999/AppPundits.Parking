@@ -8,20 +8,16 @@
         var log = getLogFn(controllerId);
 
         var vm = this;
-        vm.news = {
-            title: 'Parking',
-            description: ''
-        };
         vm.messageCount = 0;
-        vm.people = [];
+        vm.infringements = [];
         vm.title = 'Dashboard';
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
-            common.activateController(promises, controllerId)
-                .then(function () { log('Activated Dashboard View'); });
+            var promises = [getMessageCount(), getInfringements()];
+            common.activateController(promises, controllerId);
+                //.then(function () { log('Activated Dashboard View'); });
         }
 
         function getMessageCount() {
@@ -30,9 +26,9 @@
             });
         }
 
-        function getPeople() {
-            return datacontext.getPeople().then(function (data) {
-                return vm.people = data;
+        function getInfringements() {
+            return datacontext.getInfringements().then(function (data) {
+                return vm.infringements = data;
             });
         }
     }

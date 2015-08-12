@@ -39,6 +39,27 @@
                         content: '<i class="fa fa-lock"></i> Admin'
                     }
                 }
+            }, {
+                url: '/settings',
+                config: {
+                    title: 'settings',
+                    templateUrl: 'app/settings/settings.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-cog"></i> Settings'
+                    },
+                    anotherlevel: {
+                        url: '/settings',
+                        config: {
+                            title: 'settings',
+                            templateUrl: 'app/settings/settings.html',
+                            settings: {
+                                nav: 2,
+                                content: '<i class="fa fa-cog"></i> Settings'
+                            }
+                        }
+                    }
+                }
             }
         ];
     }

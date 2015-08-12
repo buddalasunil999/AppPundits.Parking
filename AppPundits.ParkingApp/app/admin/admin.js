@@ -13,8 +13,8 @@
         activate();
 
         function activate() {
-            common.activateController([], controllerId)
-                .then(function () { log('Activated Admin View'); });
+            common.activateController([], controllerId);
+                //.then(function () { log('Activated Admin View'); });
         }
     }
 })();

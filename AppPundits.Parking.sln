@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPundits.Parking.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.MySQL", "..\..\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\Identity\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj", "{26F6ECF9-4369-417B-8CF2-54FA92DF3660}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppPundits.ParkingApp", "AppPundits.ParkingApp\", "{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppPundits.ParkingApp(1)", "AppPundits.ParkingApp\", "{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_7031"

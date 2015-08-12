@@ -24,39 +24,40 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="widget wviolet">
-                        <div data-cc-widget-header title="Infringement"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Breach No</th>
-                                        <th>Car Registration</th>
-                                        <th>City</th>
-                                        <th>Car Parking</th>
-                                        <th>Breach Date</th>
-                                        <th>Extra Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-ng-repeat="p in vm.people">
-                                        <td>{{p.firstName}}</td>
-                                        <td>{{p.lastName}}</td>
-                                        <td>{{p.age}}</td>
-                                        <td>{{p.location}}</td>
-                                        <td>{{p.location}}</td>
-                                        <td>{{p.location}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
+                <!--<div class="col-md-6">-->
+                <div class="widget wviolet">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Infringement</button>
+                    <div data-cc-widget-header title="Infringement">
+                    </div>
+                    <div class="widget-content text-info">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Breach No</th>
+                                    <th>Car Registration</th>
+                                    <th>City</th>
+                                    <th>Car Parking</th>
+                                    <th>Breach Date</th>
+                                    <th>Extra Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="p in vm.infringements">
+                                    <td>{{p.BreachNo}}</td>
+                                    <td>{{p.CarRegNo}}</td>
+                                    <td>{{p.ParkingBuildingId}}</td>
+                                    <td>{{p.ParkingBuildingId}}</td>
+                                    <td>{{p.BreachDate}}</td>
+                                    <td>{{p.OffenseAmount}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
                     </div>
                 </div>
+                <!--</div>-->
                 <!--<div class="col-md-6">
                     <div class="widget wgreen">
                         <div data-cc-widget-header title="{{vm.news.title}}"
@@ -69,6 +70,35 @@
                         </div>
                     </div>
                 </div>-->
+            </div>
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add Infringement</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="carregistration">Car Registration:</label>
+                                    <input type="text" class="form-control" id="carregistration">
+                                </div>
+                                <div class="form-group">
+                                    <label for="carmake">Car Make:</label>
+                                    <input type="text" class="form-control" id="carmake">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
