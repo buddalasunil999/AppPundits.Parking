@@ -6,26 +6,15 @@
 
         var service = {
             getInfringements: function () {
-                var infringements = [];
-                $http.get('http://localhost:2239/api/infringements').success(function (data) {
-                    infringements = [
-                        { BreachNo: "15594415180515", CarRegNo: 'AAA1234', CarType: 'Papa', CustomerId: 25, OffenseAmount: '20', ParkingBuildingId: '', TransactionId: '', BreachDate: '', Comments: '', OffenseId: '' },
-                        { BreachNo: "15594415180515", CarRegNo: 'AAA1234', CarType: 'Papa', CustomerId: 25, OffenseAmount: '20', ParkingBuildingId: '', TransactionId: '', BreachDate: '', Comments: '', OffenseId: '' },
-                        { BreachNo: "15594415180515", CarRegNo: 'AAA1234', CarType: 'Papa', CustomerId: 25, OffenseAmount: '20', ParkingBuildingId: '', TransactionId: '', BreachDate: '', Comments: '', OffenseId: '' }
-                    ];
+                return $http.get('http://localhost:2239/api/infringements').then(function (response) {
+                    return response.data;
                 });
                 return $q.when(infringements);
             },
             getCartypes: function () {
-                var deferred = $q.defer();
-                $http.get('http://localhost:2239/api/cartypes').success(function (data) {
-                    deferred.resolve(data);
-                }).error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                return $http.get('http://localhost:2239/api/cartypes').then(function (response) {
+                    return response.data;
                 });
-
-                return deferred.promise;
             },
             saveCartype: function (cartype) {
                 var message;

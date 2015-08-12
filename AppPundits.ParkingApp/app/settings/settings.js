@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module('app').controller('settings', ['$scope', 'common', 'datacontext', function ($scope, common, datacontext) {
+    angular.module('app').controller('settings', ['$scope', '$modal', 'common', 'datacontext', function ($scope, $modal, common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn('settings');
 
@@ -28,13 +28,22 @@
             });
         }
 
-        $scope.savecartype = function savecartype() {
-            var cartype = {
-                'Make': $scope.carmake,
-                'Model': $scope.carmodel
-            };
-            datacontext.saveCartype(cartype).then(function () { });
-        }
-    }]);
+        $scope.openaddcar = function () {
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: 'cartypecontroller',
+                resolve: {
+                    items: function () {
+                        return 'add';
+                    }
+                }
+            });
 
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                log('New car type added with id ' + $scope.selected.Id);
+            });
+        };
+    }]);
 })();
