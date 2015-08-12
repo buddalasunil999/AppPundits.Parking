@@ -30,8 +30,8 @@
 
         $scope.savecartype = function savecartype() {
             var cartype = {
-                'Make': carmake,
-                'Model': carmodel
+                'Make': $scope.carmake,
+                'Model': $scope.carmodel
             };
             datacontext.saveCartype(cartype).then(function () { });
         }

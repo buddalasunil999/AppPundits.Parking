@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.Cors;
+using System.Configuration;
 
 namespace AppPundits.Parking
 {
@@ -16,6 +18,8 @@ namespace AppPundits.Parking
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            var cors = new EnableCorsAttribute(ConfigurationManager.AppSettings["AllowedOrigins"], "*", "*");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

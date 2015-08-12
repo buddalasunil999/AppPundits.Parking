@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('app').factory('datacontext', ['common', '$http', function (common, $http) {
+    angular.module('app').factory('datacontext', ['common', '$window', '$http', function (common, $window, $http) {
         var $q = common.$q;
 
         var service = {
-            getInfringements: function getInfringements() {
+            getInfringements: function () {
                 var infringements = [];
                 $http.get('http://localhost:2239/api/infringements').success(function (data) {
                     infringements = [
@@ -16,16 +16,16 @@
                 });
                 return $q.when(infringements);
             },
-            getCartypes: function getCartypes() {
-                var cartypes = [];
+            getCartypes: function () {
+                var deferred = $q.defer();
                 $http.get('http://localhost:2239/api/cartypes').success(function (data) {
-                    cartypes = [
-                        { Id: "1", Make: 'AAA1234', Model: 'Papa' },
-                        { Id: "2", Make: 'AAA1234', Model: 'Papa' },
-                        { Id: "3", Make: 'AAA1234', Model: 'Papa' }
-                    ];
+                    deferred.resolve(data);
+                }).error(function (msg, code) {
+                    deferred.reject(msg);
+                    $log.error(msg, code);
                 });
-                return $q.when(cartypes);
+
+                return deferred.promise;
             },
             saveCartype: function (cartype) {
                 var message;
