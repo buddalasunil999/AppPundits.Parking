@@ -11,14 +11,23 @@
             common.activateController(promises, 'cartypecontroller');
             //.then(function () { log('Cartypes are loaded'); });
         }
-        $scope.cartype = {
-            'Make': '',
-            'Model': ''
-        };
+
+        if (items.length > 0) {
+            $scope.cartype = items[0];
+            $scope.dialogtitle = 'Edit Car Type';
+        }
+        else {
+            $scope.cartype = {
+                'Id': 0,
+                'Make': '',
+                'Model': ''
+            };
+            $scope.dialogtitle = 'Add Car Type';
+        }
 
         $scope.savecartype = function () {
-            datacontext.saveCartype($scope.cartype).then(function (data) {
-                $modalInstance.close(data);
+            datacontext.saveCartype($scope.cartype).then(function (result) {
+                $modalInstance.close(result.data);
             });
         }
 

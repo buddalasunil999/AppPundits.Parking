@@ -17,14 +17,27 @@
                 });
             },
             saveCartype: function (cartype) {
-                var message;
-                $http.post('http://localhost:2239/api/cartypes', cartype).then(function (response) {
-                    message = "Success";
-                }, function (response) {
-                    message = "Failed";
-                });
+                var result = {
+                    message: '',
+                    data: cartype
+                };
+                if (cartype.Id == '') {
+                    $http.post('http://localhost:2239/api/cartypes', cartype).then(function (response) {
+                        result.data.Id = response.data.Id;
+                        result.message = 'success';
+                    }, function (response) {
+                        result.message = 'failed';
+                    });
+                }
+                else {
+                    $http.put('http://localhost:2239/api/cartypes/' + cartype.Id, cartype).then(function (response) {
+                        result.message = 'success';
+                    }, function (response) {
+                        result.message = 'failed';
+                    });
+                }
 
-                return $q.when(message);
+                return $q.when(result);
             },
             removecartype: function (id) {
                 return $http.delete('http://localhost:2239/api/cartypes/' + id).then(function (response) {

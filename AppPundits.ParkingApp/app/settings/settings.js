@@ -34,19 +34,19 @@
                 controller: 'cartypecontroller',
                 resolve: {
                     items: function () {
-                        return 'add';
+                        return [];
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedItem) {
-                $scope.selected = selectedItem;
+                $scope.cartypes.push(selectedItem);
+                log('New car type added');
             }, function () {
-                log('New car type added with id ' + $scope.selected.Id);
             });
         };
 
-        $scope.removecartype = function (id) {
+        $scope.removecartype = function (cartype) {
             var modalInstance = $modal.open({
                 templateUrl: 'myModalContent.html',
                 controller: 'ModalInstanceCtrl',
@@ -59,12 +59,31 @@
             });
 
             modalInstance.result.then(function (selectedItem) {
-                datacontext.removecartype(id).then(function () {
+                datacontext.removecartype(cartype.Id).then(function () {
                     //$dialogs.notify('Selected car type is removed.');
+                    $scope.cartypes.splice($scope.cartypes.indexOf(cartype), 1);
                     log('Selected car type is removed.');
                 });
             });
         };
+        
+        $scope.editcartype = function (cartype) {
+            //var item = jQuery.extend(true, {}, cartype);
+            var modalInstance = $modal.open({
+                templateUrl: '/app/settings/addcartype.html',
+                controller: 'cartypecontroller',
+                resolve: {
+                    items: function () {
+                        return [cartype];
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (result) {
+                log('Car type changes are saved');
+            }, function () {
+            });
+        };        
     }]);
 
     angular.module('app').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function ($scope, $modalInstance, items) {

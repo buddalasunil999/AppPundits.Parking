@@ -27,6 +27,7 @@
                                         <th>Make</th>
                                         <th>Model</th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,7 +35,8 @@
                                         <td>{{p.Id}}</td>
                                         <td>{{p.Make}}</td>
                                         <td>{{p.Model}}</td>
-                                        <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="removecartype(p.Id)"></i></td>
+                                        <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="editcartype(p)"></i></td>
+                                        <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="removecartype(p)"></i></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -43,35 +45,6 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <form role="form" data-toggle="validator">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Add Car Type</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="carmake" class="control-label">Car Make:</label>
-                                    <input type="text" ng-model="testmake" class="form-control" id="carmake" placeholder="Toyota" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="carmodel" class="control-label">Car Model:</label>{{carmodel}}
-                                    <input type="text" ng-model="testmodel" class="form-control" id="carmodel" placeholder="Hilux" required>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" ng-click="savecartype()">Save</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </form>
-                    </div>
-
                 </div>
             </div>
         </div>
