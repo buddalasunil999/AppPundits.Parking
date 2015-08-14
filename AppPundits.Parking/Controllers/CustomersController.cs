@@ -40,7 +40,7 @@ namespace AppPundits.Parking.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.CustomerId)
+            if (id != customer.Id)
             {
                 return BadRequest();
             }
@@ -75,7 +75,7 @@ namespace AppPundits.Parking.Controllers
 
             rep.Add(customer);
 
-            return CreatedAtRoute("DefaultApi", new { id = customer.CustomerId }, customer);
+            return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
         }
 
         // DELETE: api/Customers/5

@@ -1,4 +1,16 @@
-﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Are you sure?</h3>
+        </div>
+        <div class="modal-body">
+            <p>Do you want to delete the infringement?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
     <section class="matter">
         <div class="container">
             <div class="row">
@@ -15,7 +27,7 @@
                         <li class="borange">
                             <div class="pull-left"><i class="fa fa-envelope"></i></div>
                             <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Messages
+                                <span class="bold">{{messageCount}}</span> Messages
                             </div>
                             <div class="clearfix"></div>
                         </li>-->
@@ -26,7 +38,7 @@
             <div class="row">
                 <!--<div class="col-md-6">-->
                 <div class="widget wviolet">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Infringement</button>
+                    <button type="button" class="btn btn-info btn-lg" ng-click="addinfringement()">Add Infringement</button>
                     <div data-cc-widget-header title="Infringement">
                     </div>
                     <div class="widget-content text-info">
@@ -39,16 +51,20 @@
                                     <th>Car Parking</th>
                                     <th>Breach Date</th>
                                     <th>Extra Amount</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-ng-repeat="p in vm.infringements">
+                                <tr data-ng-repeat="p in infringements">
                                     <td>{{p.BreachNo}}</td>
                                     <td>{{p.CarRegNo}}</td>
                                     <td>{{p.ParkingBuildingId}}</td>
                                     <td>{{p.ParkingBuildingId}}</td>
                                     <td>{{p.BreachDate}}</td>
                                     <td>{{p.OffenseAmount}}</td>
+                                    <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="editinfringement(p)"></i></td>
+                                    <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -70,35 +86,6 @@
                         </div>
                     </div>
                 </div>-->
-            </div>
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add Infringement</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="carregistration">Car Registration:</label>
-                                    <input type="text" class="form-control" id="carregistration">
-                                </div>
-                                <div class="form-group">
-                                    <label for="carmake">Car Make:</label>
-                                    <input type="text" class="form-control" id="carmake">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </section>

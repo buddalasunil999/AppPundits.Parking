@@ -1,16 +1,12 @@
 ﻿<form role="form" data-toggle="validator">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
         <h4 class="modal-title">{{dialogtitle}}</h4>
     </div>
     <div class="modal-body">
         <div class="form-group">
             <label for="carmake" class="control-label">Car Make:</label>
             <input type="text" ng-model="cartype.Make" class="form-control" id="carmake" placeholder="Toyota" required>
-        </div>
-        <div class="form-group">
-            <label for="carmodel" class="control-label">Car Model:</label>
-            <input type="text" ng-model="cartype.Model" class="form-control" id="carmodel" placeholder="Hilux" required>
         </div>
     </div>
     <div class="modal-footer">

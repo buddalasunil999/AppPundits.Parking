@@ -7,7 +7,7 @@ namespace AppPundits.Parking.Models
     public class ParkingBuilding
     {
         [Key]
-        public int BuildingId { set; get; }
+        public int Id { set; get; }
         public string BuildingName { set; get; }
         public string StreetName { set; get; }
         public string City { set; get; }

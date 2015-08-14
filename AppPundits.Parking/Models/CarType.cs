@@ -9,6 +9,5 @@ namespace AppPundits.Parking.Models
         [Key]
         public int Id { set; get; }
         public string Make { set; get; }
-        public string Model { set; get; }
     }
 }

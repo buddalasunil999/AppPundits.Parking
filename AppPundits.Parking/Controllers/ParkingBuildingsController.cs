@@ -45,7 +45,7 @@ namespace AppPundits.Parking.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != parkingBuilding.BuildingId)
+            if (id != parkingBuilding.Id)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace AppPundits.Parking.Controllers
 
             rep.Add(parkingBuilding);
 
-            return CreatedAtRoute("DefaultApi", new { id = parkingBuilding.BuildingId }, parkingBuilding);
+            return CreatedAtRoute("DefaultApi", new { id = parkingBuilding.Id }, parkingBuilding);
         }
 
         // DELETE: api/ParkingBuildings/5

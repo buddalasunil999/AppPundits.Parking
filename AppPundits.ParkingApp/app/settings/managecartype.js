@@ -2,8 +2,6 @@
     'use strict';
     angular.module('app').controller('cartypecontroller', ['$scope', '$modalInstance', 'common', 'datacontext', 'items', function ($scope, $modalInstance, common, datacontext, items) {
 
-        $scope.title = 'cartypecontroller';
-
         activate();
 
         function activate() {
@@ -19,8 +17,7 @@
         else {
             $scope.cartype = {
                 'Id': 0,
-                'Make': '',
-                'Model': ''
+                'Make': ''
             };
             $scope.dialogtitle = 'Add Car Type';
         }

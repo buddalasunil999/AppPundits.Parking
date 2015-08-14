@@ -7,12 +7,12 @@ namespace AppPundits.Parking.Models
     public class Customer
     {
         [Key]
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
 
-        public string CustomerName { get; set; }
+        public string Name { get; set; }
 
-        public string CustomerEmail { get; set; }
+        public string Email { get; set; }
 
-        public string CustomerPhone { get; set; }
+        public string Phone { get; set; }
     }
 }

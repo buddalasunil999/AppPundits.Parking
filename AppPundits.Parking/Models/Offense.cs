@@ -7,8 +7,8 @@ namespace AppPundits.Parking.Models
     public class Offense
     {
         [Key]
-        public int OffenseId { set; get; }
-        public string OffenseDesc { set; get; }
+        public int Id { set; get; }
+        public string Description { set; get; }
         public double FineAmount { set; get; }
     }
 }

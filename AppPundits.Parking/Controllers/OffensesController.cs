@@ -45,7 +45,7 @@ namespace AppPundits.Parking.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != offense.OffenseId)
+            if (id != offense.Id)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace AppPundits.Parking.Controllers
 
             rep.Add(offense);
 
-            return CreatedAtRoute("DefaultApi", new { id = offense.OffenseId }, offense);
+            return CreatedAtRoute("DefaultApi", new { id = offense.Id }, offense);
         }
 
         // DELETE: api/Offenses/5

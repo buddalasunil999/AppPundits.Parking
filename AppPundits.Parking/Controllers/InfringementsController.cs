@@ -18,6 +18,12 @@ namespace AppPundits.Parking.Controllers
             return rep.GetInfringements();
         }
 
+        [ResponseType(typeof(Infringement))]
+        public IHttpActionResult GetInfringement(bool isnew)
+        {
+            return Ok(new Infringement());
+        }
+
         // GET: api/Infringements/5
         [ResponseType(typeof(Infringement))]
         public IHttpActionResult GetInfringement(int id)

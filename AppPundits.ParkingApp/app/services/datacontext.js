@@ -3,54 +3,82 @@
 
     angular.module('app').factory('datacontext', ['common', '$window', '$http', function (common, $window, $http) {
         var $q = common.$q;
+        var host = 'http://localhost:2239/api';
 
         var service = {
             getInfringements: function () {
-                return $http.get('http://localhost:2239/api/infringements').then(function (response) {
+                return $http.get(host + '/infringements').then(function (response) {
                     return response.data;
                 });
-                return $q.when(infringements);
+            },
+            saveInfringement: function (infringement) {
+                if (infringement.Id == '') {
+                    return $http.post(host + '/infringements', infringement);
+                }
+                else {
+                    return $http.put(host + '/infringements/' + infringement.Id, infringement);
+                }
+            },
+            removeInfringement: function (id) {
+                return $http.delete(host + '/infringements/' + id).then(function (response) {
+                    return response;
+                });
             },
             getCartypes: function () {
-                return $http.get('http://localhost:2239/api/cartypes').then(function (response) {
+                return $http.get(host + '/cartypes').then(function (response) {
                     return response.data;
                 });
             },
             saveCartype: function (cartype) {
-                var result = {
-                    message: '',
-                    data: cartype
-                };
                 if (cartype.Id == '') {
-                    $http.post('http://localhost:2239/api/cartypes', cartype).then(function (response) {
-                        result.data.Id = response.data.Id;
-                        result.message = 'success';
-                    }, function (response) {
-                        result.message = 'failed';
-                    });
+                    return $http.post(host + '/cartypes', cartype);
                 }
                 else {
-                    $http.put('http://localhost:2239/api/cartypes/' + cartype.Id, cartype).then(function (response) {
-                        result.message = 'success';
-                    }, function (response) {
-                        result.message = 'failed';
-                    });
+                    return $http.put(host + '/cartypes/' + cartype.Id, cartype);
                 }
-
-                return $q.when(result);
             },
             removecartype: function (id) {
-                return $http.delete('http://localhost:2239/api/cartypes/' + id).then(function (response) {
+                return $http.delete(host + '/cartypes/' + id).then(function (response) {
                     return response;
                 });
             },
-            getMessageCount: getMessageCount
+            getMessageCount: getMessageCount,
+            getParkingBuildings: getParkingBuildings,
+            saveParkingBuilding: saveParkingBuilding,
+            removeParkingBuilding: removeParkingBuilding,
+            getNewInfringement: getNewInfringement
         };
 
         return service;
 
         function getMessageCount() { return $q.when(72); }
 
+        function getParkingBuildings() {
+            return $http.get(host + '/parkingbuildings').then(function (response) {
+                return response.data;
+            });
+        }
+
+        function removeParkingBuilding(id) {
+            return $http.delete(host + '/parkingbuildings/' + id).then(function (response) {
+                return response;
+            });
+        }
+
+        function saveParkingBuilding(building) {
+            if (building.Id == '') {
+                return $http.post(host + '/parkingbuildings', building);
+            }
+            else {
+                return $http.put(host + '/parkingbuildings/' + building.Id, building);
+            }
+        }
+
+        function getNewInfringement() {
+            return $http.get(host + '/infringements?isnew=true').then(function (response) {
+                return response.data;
+            });
+        }
 
     }]);
 
