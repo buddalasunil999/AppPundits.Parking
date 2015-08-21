@@ -74,7 +74,7 @@ input.form-control,
 select.form-control,
 textarea.form-control {
     /*width: 205px;*/
-    width: 60%;
+    /*width: 60%;*/
     display: inline;
     display: block;
 }

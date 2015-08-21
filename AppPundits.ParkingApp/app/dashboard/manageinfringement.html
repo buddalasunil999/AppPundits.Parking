@@ -3,97 +3,112 @@
         <button type="button" class="close" ng-click="cancel()">&times;</button>
         <h4 class="modal-title">{{dialogtitle}}</h4>
     </div>
-    <div class="modal-body">
+    <div class="modal-body form-horizontal">
         <div class="form-group">
-            <label for="carregistration" class="control-label">Car Registration:</label>
-            <input type="text" ng-model="infringement.CarRegNo" class="form-control" id="carregistration" placeholder="XXX123" required>
+            <label for="carregistration" class="col-sm-3 control-label">Car Registration:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.CarRegNo" class="form-control" id="carregistration" placeholder="XXX123" required>
+            </div>
         </div>
         <div class="form-group">
-            <label for="carmake" class="control-label">Car Make:</label>
-            <select id="carmake" ng-model="infringement.CarMake" class="form-control" required>
-                <option ng-repeat="type in cartypes">{{type.Make}}</option>
-            </select>
+            <label for="carmake" class="col-sm-3 control-label">Car Make:</label>
+            <div class="col-sm-9">
+                <select id="carmake" ng-model="infringement.CarMake" class="form-control" required>
+                    <option ng-repeat="type in cartypes">{{type.Make}}</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
-            <label for="carmodel" class="control-label">Car Model:</label>
-            <input type="text" ng-model="infringement.CarModel" class="form-control" id="carmodel" required />
+            <label for="carmodel" class="col-sm-3 control-label">Car Model:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.CarModel" class="form-control" id="carmodel" required />
+            </div>
         </div>
         <div class="form-group">
-            <label for="parkingbuilding" class="control-label">Parking Building:</label>
-            <select ng-model="infringement.ParkingBuilding"
-                    ng-options="parking.StreetName for parking in parkingbuildings"
-                    id="parkingbuilding" class="form-control" required></select>
-            <!--<select ng-model="infringement.ParkingBuilding" id="parkingbuilding" class="form-control" required>
-                <option ng-repeat="building in parkingbuildings" value="{{building.Id}}">{{building.StreetName}}</option>
-            </select>-->
+            <label for="parkingbuilding" class="col-sm-3 control-label">Parking Building:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.ParkingBuilding"
+                        ng-options="parking.StreetName for parking in parkingbuildings"
+                        id="parkingbuilding" class="form-control" required></select>
+                <!--<select ng-model="infringement.ParkingBuilding" id="parkingbuilding" class="form-control" required>
+                    <option ng-repeat="building in parkingbuildings" value="{{building.Id}}">{{building.StreetName}}</option>
+                </select>-->
+            </div>
         </div>
         <div class="form-group">
-            <label for="customeremail" class="control-label">Customer E-mail:</label>
-            <input type="text" ng-model="infringement.Customer.Email" class="form-control" id="customeremail" />
+            <label for="customeremail" class="col-sm-3 control-label">Customer E-mail:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Customer.Email" class="form-control" id="customeremail" />
+            </div>
         </div>
         <div class="form-group">
-            <label for="customerphone" class="control-label">Customer Phone:</label>
-            <input type="text" ng-model="infringement.Customer.Phone" class="form-control" id="customerphone" />
+            <label for="customerphone" class="col-sm-3 control-label">Customer Phone:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Customer.Phone" class="form-control" id="customerphone" />
+            </div>
         </div>
         <div class="form-group">
-            <label for="offense" class="control-label">Offense Type:</label>
-            <select ng-model="infringement.Offense" id="offense" class="form-control" required>
-                <option>Test1</option>
-            </select>
+            <label for="offense" class="col-sm-3 control-label">Offense Type:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Offense" id="offense" class="form-control" required>
+                    <option>Test1</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
-            <label for="breachdate" class="control-label">Date:</label>
-            <input type="text" ng-model="infringement.BreachDate" class="form-control" id="breachdate" required />
+            <label for="breachdate" class="col-sm-3 control-label">Date:</label>
+            <div class="col-sm-9">
+                <input type="datetime-local" ng-model="infringement.BreachDate" class="form-control" id="breachdate" required />
+            </div>
         </div>
         <div class="form-group">
-            <label for="offenseamount" class="control-label">Amount:</label>
-            <input type="text" ng-model="infringement.OffenseAmount" class="form-control" id="offenseamount" required />
+            <label for="offenseamount" class="col-sm-3 control-label">Amount:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.OffenseAmount" class="form-control" id="offenseamount" required />
+            </div>
         </div>
         <div class="form-group">
-            <label for="offensecomments" class="control-label">Offense:</label>
-            <input type="text" ng-model="infringement.Comments" class="form-control" id="offensecomments" />
+            <label for="offensecomments" class="col-sm-3 control-label">Offense:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Comments" class="form-control" id="offensecomments" />
+            </div>
         </div>
         <div class="form-group">
-            <label for="photo" class="control-label">Photo:</label>
-            <img ng-model="infringement.Photo" class="form-control" id="photo" />
+            <label for="datepaid" class="col-sm-3 control-label">Date Paid:</label>
+            <div class="col-sm-9">
+                <input type="datetime-local" name="bday" class="form-control">
+            </div>
         </div>
         <div class="form-group">
-            <!--<div id="datetimepicker1" class="input-append date">
-                <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-                <span class="add-on">
-                    <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                    </i>
-                </span>
-            </div>-->
-            <label for="datepaid" class="control-label">Date Paid:</label>
-            <input type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
-                   ng-model="infringement.Transaction.PaidDate"
-                   date-disabled="disabled(date, mode)"
-                   ng-required="true" close-text="Close" id="datepaid" />
-            <!--<timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>-->
+            <label for="amountpaid" class="col-sm-3 control-label">Amount Paid:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Transaction.Amount" class="form-control" id="amountpaid" />
+            </div>
         </div>
         <div class="form-group">
-            <label for="amountpaid" class="control-label">Amount Paid:</label>
-            <input type="text" ng-model="infringement.Transaction.Amount" class="form-control" id="amountpaid" />
+            <label for="paymentmethod" class="col-sm-3 control-label">Payment Method:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Transaction.Type" id="paymentmethod" class="form-control">
+                    <option>Credit Card</option>
+                    <option>Cheque</option>
+                    <option>Cash</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
-            <label for="paymentmethod" class="control-label">Payment Method:</label>
-            <select ng-model="infringement.Transaction.Type" id="paymentmethod" class="form-control">
-                <option>Credit Card</option>
-                <option>Cheque</option>
-                <option>Cash</option>
-            </select>
+            <label for="transactionid" class="col-sm-3 control-label">Transaction Id:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Transaction.Reference" class="form-control" id="transactionid" />
+            </div>
         </div>
         <div class="form-group">
-            <label for="transactionid" class="control-label">Transaction Id:</label>
-            <input type="text" ng-model="infringement.Transaction.Reference" class="form-control" id="transactionid" />
-        </div>
-        <div class="form-group">
-            <label for="paymentstatus" class="control-label">Payment Status:</label>
-            <select ng-model="infringement.Transaction.Type" id="paymentstatus" class="form-control">
-                <option>Pending</option>
-                <option>Processed</option>
-            </select>
+            <label for="paymentstatus" class="col-sm-3 control-label">Payment Status:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Transaction.Type" id="paymentstatus" class="form-control">
+                    <option>Pending</option>
+                    <option>Processed</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="modal-footer">
