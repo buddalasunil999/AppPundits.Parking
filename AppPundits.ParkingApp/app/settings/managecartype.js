@@ -23,6 +23,7 @@
         }
 
         $scope.savecartype = function () {
+            $scope.$broadcast('kickOffValidations');
             datacontext.saveCartype($scope.cartype).then(function (result) {
                 $modalInstance.close(result.data);
             });

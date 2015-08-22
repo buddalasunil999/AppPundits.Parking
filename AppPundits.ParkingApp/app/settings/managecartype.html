@@ -1,4 +1,4 @@
-﻿<form role="form" data-toggle="validator">
+﻿<form role="form" data-toggle="validator" ng-submit="savecartype()">
     <div class="modal-header">
         <button type="button" class="close" ng-click="cancel()">&times;</button>
         <h4 class="modal-title">{{dialogtitle}}</h4>
@@ -6,11 +6,11 @@
     <div class="modal-body">
         <div class="form-group">
             <label for="carmake" class="control-label">Car Make:</label>
-            <input type="text" ng-model="cartype.Make" class="form-control" id="carmake" placeholder="Toyota" required>
+            <input type="text" ng-model="cartype.Make" class="form-control" id="carmake" required>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-click="savecartype()">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
     </div>
 </form>

@@ -1,4 +1,4 @@
-﻿<form role="form" data-toggle="validator">
+﻿<form role="form" name="inform" data-toggle="validator" ng-submit="saveinfringement()">
     <div class="modal-header">
         <button type="button" class="close" ng-click="cancel()">&times;</button>
         <h4 class="modal-title">{{dialogtitle}}</h4>
@@ -7,7 +7,7 @@
         <div class="form-group">
             <label for="carregistration" class="col-sm-3 control-label">Car Registration:</label>
             <div class="col-sm-9">
-                <input type="text" ng-model="infringement.CarRegNo" class="form-control" id="carregistration" placeholder="XXX123" required>
+                <input type="text" ng-model="infringement.CarRegNo" class="form-control" name="carregistration" placeholder="XXX123" required>
             </div>
         </div>
         <div class="form-group">
@@ -30,7 +30,7 @@
             <label for="parkingbuildingCntrl" class="col-sm-3 control-label">Parking Building:</label>
             <div class="col-sm-9">
                 <select ng-model="infringement.ParkingBuilding"
-                        ng-options="parking.BuildingName for parking in parkingbuildings"
+                        ng-options="parking.BuildingName for parking in parkingbuildings track by parking.Id"
                         id="parkingbuildingCntrl" class="form-control" required></select>
                 <!--<select ng-model="infringement.ParkingBuilding" id="parkingbuilding" class="form-control" required>
                     <option ng-repeat="building in parkingbuildings" value="{{building.Id}}">{{building.StreetName}}</option>
@@ -40,20 +40,20 @@
         <div class="form-group">
             <label for="customeremail" class="col-sm-3 control-label">Customer E-mail:</label>
             <div class="col-sm-9">
-                <input type="text" ng-model="infringement.Customer.Email" class="form-control" id="customeremail" />
+                <input type="text" ng-model="infringement.Customer.Email" class="form-control" id="customeremail" required />
             </div>
         </div>
         <div class="form-group">
             <label for="customerphone" class="col-sm-3 control-label">Customer Phone:</label>
             <div class="col-sm-9">
-                <input type="text" ng-model="infringement.Customer.Phone" class="form-control" id="customerphone" />
+                <input type="text" ng-model="infringement.Customer.Phone" class="form-control" id="customerphone" required />
             </div>
         </div>
         <div class="form-group">
             <label for="offenseCntrl" class="col-sm-3 control-label">Offense Type:</label>
             <div class="col-sm-9">
                 <select ng-model="infringement.Offense"
-                        ng-options="offense.Description for offense in offenses"
+                        ng-options="offense.Description for offense in offenses track by offense.Id"
                         id="offenseCntrl" class="form-control" ng-change="assignOffenseAmount(offense)" required></select>
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group">
             <label for="offenseamount" class="col-sm-3 control-label">Amount:</label>
             <div class="col-sm-9">
-                <input type="text" ng-model="infringement.OffenseAmount" class="form-control" id="offenseamount" required />
+                <input type="number" step="0.01" ng-model="infringement.OffenseAmount" class="form-control" id="offenseamount" required />
             </div>
         </div>
         <div class="form-group">
@@ -84,7 +84,7 @@
         <div class="form-group">
             <label for="amountpaid" class="col-sm-3 control-label">Amount Paid:</label>
             <div class="col-sm-9">
-                <input type="text" ng-model="infringement.Transaction.Amount" class="form-control" id="amountpaid" />
+                <input type="number" step="0.01" ng-model="infringement.Transaction.Amount" class="form-control" id="amountpaid" />
             </div>
         </div>
         <div class="form-group">
@@ -106,7 +106,7 @@
         <div class="form-group">
             <label for="paymentstatus" class="col-sm-3 control-label">Payment Status:</label>
             <div class="col-sm-9">
-                <select ng-model="infringement.Transaction.Type" id="paymentstatus" class="form-control">
+                <select ng-model="infringement.Transaction.Status" id="paymentstatus" class="form-control">
                     <option>Pending</option>
                     <option>Processed</option>
                 </select>
@@ -114,7 +114,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="saveinfringement()">Save</button>
+        <button type="submit" class="btn btn-default">Save</button>
         <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
     </div>
 </form>
