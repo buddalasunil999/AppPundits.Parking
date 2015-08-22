@@ -4,7 +4,10 @@ namespace AppPundits.Parking.Models
 {
     class ParkingDbContext : DbContext
     {
-        public ParkingDbContext() : base(nameOrConnectionString: "DefaultConnection") { }
+        public ParkingDbContext() : base(nameOrConnectionString: "DefaultConnection") {
+
+            this.Configuration.LazyLoadingEnabled = false;
+        }
         
         public DbSet<CarType> CarTypes { get; set; }
 

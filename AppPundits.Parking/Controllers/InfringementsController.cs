@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using AppPundits.Parking.Models;
 using AppPundits.Parking.Models.Repositories;
+using System;
 
 namespace AppPundits.Parking.Controllers
 {
@@ -78,6 +79,9 @@ namespace AppPundits.Parking.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            if (infringement.BreachDate == DateTime.MinValue)
+                infringement.BreachDate = DateTime.Now;
 
             rep.Add(infringement);
 

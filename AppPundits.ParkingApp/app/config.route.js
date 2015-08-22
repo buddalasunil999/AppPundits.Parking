@@ -45,16 +45,16 @@
                     title: 'settings',
                     templateUrl: 'app/settings/settings.html',
                     settings: {
-                        nav: 2,
+                        nav: 3,
                         content: '<i class="fa fa-cog"></i> Settings'
                     },
                     anotherlevel: {
-                        url: '/settings',
+                        url: '/settings/cartypes',
                         config: {
                             title: 'settings',
                             templateUrl: 'app/settings/settings.html',
                             settings: {
-                                nav: 2,
+                                nav: 1,
                                 content: '<i class="fa fa-cog"></i> Settings'
                             }
                         }

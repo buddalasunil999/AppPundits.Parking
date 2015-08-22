@@ -46,7 +46,10 @@
             getParkingBuildings: getParkingBuildings,
             saveParkingBuilding: saveParkingBuilding,
             removeParkingBuilding: removeParkingBuilding,
-            getNewInfringement: getNewInfringement
+            getNewInfringement: getNewInfringement,
+            getOffenses: getOffenses,
+            saveOffense: saveOffense,
+            removeOffense: removeOffense
         };
 
         return service;
@@ -79,7 +82,27 @@
                 return response.data;
             });
         }
+        
+        function getOffenses() {
+            return $http.get(host + '/offenses').then(function (response) {
+                return response.data;
+            });
+        }
 
+        function saveOffense(offense) {
+            if (offense.Id == '') {
+                return $http.post(host + '/offenses', offense);
+            }
+            else {
+                return $http.put(host + '/offenses/' + offense.Id, offense);
+            }
+        }
+
+        function removeOffense(id) {
+            return $http.delete(host + '/offenses/' + id).then(function (response) {
+                return response;
+            });
+        }
     }]);
 
 })();

@@ -9,6 +9,7 @@
         function activate() {
             promises.push(getCartypes());
             promises.push(getParkingBuildings());
+            promises.push(getOffenses());
             common.activateController(promises, 'infringementcontroller');
         }
 
@@ -24,27 +25,20 @@
             });
         }
 
+        function getOffenses() {
+            return datacontext.getOffenses().then(function (data) {
+                return $scope.offenses = data;
+            });
+        }
+
         function getNewInfringement() {
             return datacontext.getNewInfringement().then(function (data) {
                 return $scope.infringement = data;
             });
         }
 
-        if (items.length > 0) {
-            $scope.infringement = items[0];
-            $scope.dialogtitle = 'Edit Infringement';
-        }
-        else {
-            promises.push(getNewInfringement());
-            //$scope.infringement = {
-            //    'Id': 0,
-            //    'CarRegNo': '',
-            //    'CarMake': '',
-            //    'CarModel': '',
-            //    'BreachNo': '',
-            //    'ParkingBuildingId': 0
-            //};
-            $scope.dialogtitle = 'Add Infringement';
+        $scope.assignOffenseAmount = function (offense) {
+            $scope.infringement.OffenseAmount = $scope.infringement.Offense.FineAmount;
         }
 
         $scope.saveinfringement = function () {
@@ -56,6 +50,15 @@
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
+
+        if (items.length > 0) {
+            $scope.infringement = items[0];
+            $scope.dialogtitle = 'Edit Infringement';
+        }
+        else {
+            promises.push(getNewInfringement());
+            $scope.dialogtitle = 'Add Infringement';
+        }
 
         activate();
     }]);

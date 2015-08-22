@@ -36,7 +36,15 @@
                 </div>
             </div>
             <div class="row">
+                <!--<div class="col-sm-4">-->
                 <button type="button" class="btn btn-info btn-lg" ng-click="addinfringement()">Add Infringement</button>
+                <!--</div>-->
+                <!--<div class="form-horizontal col-sm-4 col-sm-offset-4">
+                    <div class="form-group has-feedback">
+                        <input type="text" ng-model="searchtext" class="form-control" />
+                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    </div>
+                </div>-->
             </div>
             <div class="row">
                 <!--<div class="col-md-6">-->
@@ -44,7 +52,7 @@
                     <div data-cc-widget-header title="Infringement">
                     </div>
                     <div class="widget-content text-info">
-                        <table class="table table-condensed table-striped">
+                        <table datatable="ng" class="table table-condensed table-striped">
                             <thead>
                                 <tr>
                                     <th>Breach No</th>
@@ -58,12 +66,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-ng-repeat="p in infringements">
+                                <tr data-ng-repeat="p in infringements | filter:searchtext">
                                     <td>{{p.BreachNo}}</td>
                                     <td>{{p.CarRegNo}}</td>
-                                    <td>{{p.ParkingBuildingId}}</td>
-                                    <td>{{p.ParkingBuildingId}}</td>
-                                    <td>{{p.BreachDate}}</td>
+                                    <td>{{p.ParkingBuilding.City}}</td>
+                                    <td>{{p.ParkingBuilding.BuildingName}}</td>
+                                    <td>{{p.BreachDate | date:'MM/dd/yyyy h:mm a'}}</td>
                                     <td>{{p.OffenseAmount}}</td>
                                     <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="editinfringement(p)"></i></td>
                                     <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
