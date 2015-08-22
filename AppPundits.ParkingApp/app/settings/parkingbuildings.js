@@ -69,6 +69,7 @@
             });
 
             modalInstance.result.then(function (result) {
+                $scope.buildings[$scope.buildings.indexOf(building)] = angular.copy(result);
                 log('Building changes are saved');
             }, function () {
             });

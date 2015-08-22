@@ -7,9 +7,6 @@
 
         $scope.infringements = [];
         $scope.title = 'Dashboard';
-        $scope.carmodel = '';
-
-        activate();
 
         function activate() {
             var promises = [getInfringements()];
@@ -74,10 +71,13 @@
             });
 
             modalInstance.result.then(function (result) {
+                $scope.infringements[$scope.infringements.indexOf(infringement)] = angular.copy(result);
                 log('Infringement changes are saved');
             }, function () {
             });
         };
+
+        activate();
     }]);
 
     angular.module('app').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function ($scope, $modalInstance, items) {

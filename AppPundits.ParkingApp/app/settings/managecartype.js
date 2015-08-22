@@ -2,6 +2,8 @@
     'use strict';
     angular.module('app').controller('cartypecontroller', ['$scope', '$modalInstance', 'common', 'datacontext', 'items', function ($scope, $modalInstance, common, datacontext, items) {
 
+        var isedit = items.length > 0;
+
         activate();
 
         function activate() {
@@ -10,8 +12,8 @@
             //.then(function () { log('Cartypes are loaded'); });
         }
 
-        if (items.length > 0) {
-            $scope.cartype = items[0];
+        if (isedit) {
+            $scope.cartype = angular.copy(items[0]);
             $scope.dialogtitle = 'Edit Car Type';
         }
         else {
@@ -23,9 +25,11 @@
         }
 
         $scope.savecartype = function () {
-            $scope.$broadcast('kickOffValidations');
             datacontext.saveCartype($scope.cartype).then(function (result) {
-                $modalInstance.close(result.data);
+                if (isedit)
+                    $modalInstance.close($scope.cartype);
+                else
+                    $modalInstance.close(result.data);
             });
         }
 

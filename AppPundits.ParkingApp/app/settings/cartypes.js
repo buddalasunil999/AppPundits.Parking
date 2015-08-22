@@ -63,7 +63,7 @@
         $scope.editcartype = function (cartype) {
             //var item = jQuery.extend(true, {}, cartype);
             var modalInstance = $modal.open({
-                templateUrl: '/app/settings/addcartype.html',
+                templateUrl: '/app/settings/managecartype.html',
                 controller: 'cartypecontroller',
                 resolve: {
                     items: function () {
@@ -73,6 +73,7 @@
             });
 
             modalInstance.result.then(function (result) {
+                $scope.cartypes[$scope.cartypes.indexOf(cartype)] = angular.copy(result);
                 log('Car type changes are saved');
             }, function () {
             });

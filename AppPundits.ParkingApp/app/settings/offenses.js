@@ -69,6 +69,7 @@
             });
 
             modalInstance.result.then(function (result) {
+                $scope.offenses[$scope.offenses.indexOf(offense)] = angular.copy(result);
                 log('Offense changes are saved');
             }, function () {
             });

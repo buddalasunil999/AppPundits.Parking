@@ -2,6 +2,8 @@
     'use strict';
     angular.module('app').controller('manageparkingbuilding', ['$scope', '$modalInstance', 'common', 'datacontext', 'items', function ($scope, $modalInstance, common, datacontext, items) {
 
+        var isedit = items.length > 0;
+
         activate();
 
         function activate() {
@@ -9,8 +11,8 @@
             common.activateController(promises, 'manageparkingbuilding');
         }
 
-        if (items.length > 0) {
-            $scope.building = items[0];
+        if (isedit) {
+            $scope.building = angular.copy(items[0]);
             $scope.dialogtitle = 'Edit Parking Building';
         }
         else {
@@ -25,7 +27,10 @@
 
         $scope.save = function () {
             datacontext.saveParkingBuilding($scope.building).then(function (result) {
-                $modalInstance.close(result.data);
+                if (isedit)
+                    $modalInstance.close($scope.building);
+                else
+                    $modalInstance.close(result.data);
             });
         }
 

@@ -4,14 +4,15 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn('manageoffense');
         activate();
+        var isedit = items.length > 0;
 
         function activate() {
             var promises = [];
             common.activateController(promises, 'manageoffense');
         }
 
-        if (items.length > 0) {
-            $scope.offense = items[0];
+        if (isedit) {
+            $scope.offense = angular.copy(items[0]);
             $scope.dialogtitle = 'Edit Offense';
         }
         else {
@@ -25,7 +26,10 @@
 
         $scope.save = function () {
             datacontext.saveOffense($scope.offense).then(function (result) {
-                $modalInstance.close(result.data);
+                if (isedit)
+                    $modalInstance.close($scope.offense);
+                else
+                    $modalInstance.close(result.data);
             });
         }
 

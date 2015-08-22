@@ -4,7 +4,7 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn('infringementcontroller');
         var promises = [];
-
+        var isedit = items.length > 0;
 
         function activate() {
             promises.push(getCartypes());
@@ -43,7 +43,10 @@
 
         $scope.saveinfringement = function () {
             datacontext.saveInfringement($scope.infringement).then(function (result) {
-                $modalInstance.close(result.data);
+                if (isedit)
+                    $modalInstance.close($scope.infringement);
+                else
+                    $modalInstance.close(result.data);
             });
         }
 
@@ -51,8 +54,8 @@
             $modalInstance.dismiss('cancel');
         };
 
-        if (items.length > 0) {
-            $scope.infringement = items[0];
+        if (isedit) {
+            $scope.infringement = angular.copy(items[0]);
             $scope.dialogtitle = 'Edit Infringement';
         }
         else {
