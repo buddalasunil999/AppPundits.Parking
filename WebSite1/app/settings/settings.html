@@ -1,0 +1,31 @@
+﻿<section id="settings-view" class="mainbar">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body">
+            <p>{{message}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div data-ng-include="'/app/settings/cartypes.html'"></div>
+                </div>
+                <div class="col-md-8">
+                    <div data-ng-include="'/app/settings/parkingbuildings.html'"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div data-ng-include="'/app/settings/offenses.html'"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

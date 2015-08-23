@@ -30,6 +30,26 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppPundits.ParkingApp(1)", 
 		SlnRelativePath = "AppPundits.ParkingApp\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite1(2)", "WebSite1\", "{853E1E68-EA61-41CC-89F8-1EE04147A74C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_23701"
+		Debug.AspNetCompiler.PhysicalPath = "WebSite1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23701\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_23701"
+		Release.AspNetCompiler.PhysicalPath = "WebSite1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23701\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "23701"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +72,10 @@ Global
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

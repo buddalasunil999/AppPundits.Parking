@@ -1,0 +1,35 @@
+{
+  "name": "parkingapp",
+  "version": "1.0.0",
+  "description": "App Pundits parking application for municipal enforcement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buddalasunil999/AppPundits.Parking.git"
+  },
+  "keywords": [
+    "app",
+    "pundits",
+    "parking",
+    "municipal",
+    "enforcement"
+  ],
+  "author": "AppsPundits",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buddalasunil999/AppPundits.Parking/issues"
+  },
+  "homepage": "https://github.com/buddalasunil999/AppPundits.Parking#readme",
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.3.4"
+  }
+}

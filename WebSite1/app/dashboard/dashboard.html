@@ -1,0 +1,55 @@
+﻿<section id="dashboard-view" class="mainbar">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Are you sure?</h3>
+        </div>
+        <div class="modal-body">
+            <p>Do you want to delete the infringement?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <button type="button" class="btn btn-info btn-lg" ng-click="addinfringement()">Add Infringement</button>
+            </div>
+            <div class="row">
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="Infringement" allow-collapse="true">
+                    </div>
+                    <div class="widget-content text-info">
+                        <table datatable="ng" class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Breach No</th>
+                                    <th>Car Registration</th>
+                                    <th>City</th>
+                                    <th>Car Parking</th>
+                                    <th>Breach Date</th>
+                                    <th>Extra Amount</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="p in infringements | filter:searchtext">
+                                    <td>{{p.BreachNo}}</td>
+                                    <td>{{p.CarRegNo}}</td>
+                                    <td>{{p.ParkingBuilding.City}}</td>
+                                    <td>{{p.ParkingBuilding.BuildingName}}</td>
+                                    <td>{{p.BreachDate | date:'MM/dd/yyyy h:mm a'}}</td>
+                                    <td>{{p.OffenseAmount}}</td>
+                                    <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="editinfringement(p)"></i></td>
+                                    <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,120 @@
+﻿<form role="form" name="inform" data-toggle="validator" ng-submit="saveinfringement()">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
+        <h4 class="modal-title">{{dialogtitle}}</h4>
+    </div>
+    <div class="modal-body form-horizontal">
+        <div class="form-group">
+            <label for="carregistration" class="col-sm-3 control-label">Car Registration:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.CarRegNo" class="form-control" name="carregistration" placeholder="XXX123" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="carmake" class="col-sm-3 control-label">Car Make:</label>
+            <div class="col-sm-9">
+                <input type="text" name="carmake" list="carMakers" ng-model="infringement.CarMake"
+                       class="form-control" required />
+                <datalist id="carMakers">
+                    <option ng-repeat="type in cartypes">{{type.Make}}</option>
+                </datalist>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="carmodel" class="col-sm-3 control-label">Car Model:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.CarModel" class="form-control" id="carmodel" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="parkingbuildingCntrl" class="col-sm-3 control-label">Parking Building:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.ParkingBuilding"
+                        ng-options="parking.BuildingName for parking in parkingbuildings track by parking.Id"
+                        id="parkingbuildingCntrl" class="form-control" required></select>
+                <!--<select ng-model="infringement.ParkingBuilding" id="parkingbuilding" class="form-control" required>
+                    <option ng-repeat="building in parkingbuildings" value="{{building.Id}}">{{building.StreetName}}</option>
+                </select>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="customeremail" class="col-sm-3 control-label">Customer E-mail:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Customer.Email" class="form-control" id="customeremail" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="customerphone" class="col-sm-3 control-label">Customer Phone:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Customer.Phone" class="form-control" id="customerphone" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="offenseCntrl" class="col-sm-3 control-label">Offense Type:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Offense"
+                        ng-options="offense.Description for offense in offenses track by offense.Id"
+                        id="offenseCntrl" class="form-control" ng-change="assignOffenseAmount(offense)" required></select>
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <label for="breachdate" class="col-sm-3 control-label">Date:</label>
+            <div class="col-sm-9">
+                <input type="datetime-local" ng-model="infringement.BreachDate" class="form-control" id="breachdate" required />
+            </div>
+        </div>-->
+        <div class="form-group">
+            <label for="offenseamount" class="col-sm-3 control-label">Amount:</label>
+            <div class="col-sm-9">
+                <input type="number" step="0.01" ng-model="infringement.OffenseAmount" class="form-control" id="offenseamount" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="offensecomments" class="col-sm-3 control-label">Offense:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Comments" class="form-control" id="offensecomments" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="datepaid" class="col-sm-3 control-label">Date Paid:</label>
+            <div class="col-sm-9">
+                <input type="date" id="datepaid" class="form-control" ng-model="infringement.Transaction.PaidDate">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="amountpaid" class="col-sm-3 control-label">Amount Paid:</label>
+            <div class="col-sm-9">
+                <input type="number" step="0.01" ng-model="infringement.Transaction.Amount" class="form-control" id="amountpaid" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="paymentmethod" class="col-sm-3 control-label">Payment Method:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Transaction.Type" id="paymentmethod" class="form-control">
+                    <option>Credit Card</option>
+                    <option>Cheque</option>
+                    <option>Cash</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="transactionid" class="col-sm-3 control-label">Transaction Id:</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="infringement.Transaction.Reference" class="form-control" id="transactionid" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="paymentstatus" class="col-sm-3 control-label">Payment Status:</label>
+            <div class="col-sm-9">
+                <select ng-model="infringement.Transaction.Status" id="paymentstatus" class="form-control">
+                    <option>Pending</option>
+                    <option>Processed</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+    </div>
+</form>

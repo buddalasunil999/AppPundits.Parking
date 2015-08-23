@@ -1,4 +1,4 @@
-/// <binding />
+﻿/// <binding BeforeBuild='scripts' ProjectOpened='watch' />
 // include plug-ins
 var gulp = require('gulp');
 var concat = require('gulp-concat');

@@ -1,0 +1,36 @@
+﻿<div ng-controller="parkingbuildings">
+    <div>
+        <button type="button" class="btn btn-info btn-lg" ng-click="add()">Add Parking Building</button>
+    </div>
+    <div class="widget wviolet">
+        <div data-cc-widget-header title="Parking Buildings" allow-collapse="true">
+        </div>
+        <div class="widget-content text-info table-responsive">
+            <table class="table table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="p in buildings">
+                        <td>{{p.Id}}</td>
+                        <td>{{p.BuildingName}}</td>
+                        <td>{{p.StreetName}}</td>
+                        <td>{{p.City}}</td>
+                        <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="edit(p)"></i></td>
+                        <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="widget-foot">
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
