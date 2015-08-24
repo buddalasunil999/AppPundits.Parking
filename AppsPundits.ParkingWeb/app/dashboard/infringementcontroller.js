@@ -56,7 +56,7 @@
             $scope.dialogtitle = 'Edit Infringement';
         }
         else {
-            promises.push(getNewInfringement());
+            getNewInfringement();
             $scope.dialogtitle = 'Add Infringement';
         }
 
