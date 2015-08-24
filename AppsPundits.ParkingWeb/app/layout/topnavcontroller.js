@@ -20,7 +20,7 @@
 
             modalInstance.result.then(function (result) {
                 //log('You are logged in');
-                $location.path('/dashboard');
+                $location.path('/');
             }, function () {
             });
         };

@@ -26,8 +26,8 @@
                 return $route.current.loadedTemplateUrl.indexOf(route) > -1 ? 'current' : '';
             }
             else if (route === 'dashboard')
-                return true;
-            return false;
+                return 'current';
+            return '';
         }
     };
 

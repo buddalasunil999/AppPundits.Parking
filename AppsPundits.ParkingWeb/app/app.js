@@ -2,8 +2,8 @@
     'use strict';
 
     angular.module('app', ['ngRoute',
-            'ngCookies',
-            'ui.bootstrap',     // ui-bootstrap (ex: carousel, pagination, dialog)
+        'ngCookies',
+        'ui.bootstrap',
         'datatables',
         'datatables.bootstrap'])
         .config(config)
@@ -20,38 +20,30 @@
     config.$inject = ['$routeProvider', '$locationProvider'];
     function config($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/', {
+            .when('/home', {
                 controller: 'homecontroller',
                 templateUrl: 'app/home/home.html',
                 controllerAs: 'vm'
             })
-            .when('/login', {
-                controller: 'LoginController',
-                templateUrl: 'app/login/login.view.html',
-                controllerAs: 'vm'
+            .when('/', {
+                controller: 'dashboard',
+                templateUrl: 'app/dashboard/dashboard.html'
+            })
+            .when('/admin', {
+                controller: 'admin',
+                controllerAs: 'vm',
+                templateUrl: 'app/admin/admin.html'
+            })
+            .when('/settings', {
+                controller: 'settings',
+                templateUrl: 'app/settings/settings.html'
             })
             .when('/register', {
                 controller: 'RegisterController',
                 templateUrl: 'app/register/register.view.html',
                 controllerAs: 'vm'
             })
-            .when('/dashboard',
-                {
-                    controller: 'dashboard',
-                    templateUrl: 'app/dashboard/dashboard.html'
-                })
-            .when('/admin',
-                {
-                    controller: 'admin',
-                    controllerAs: 'vm',
-                    templateUrl: 'app/admin/admin.html'
-                })
-            .when('/settings',
-                {
-                    controller: 'settings',
-                    templateUrl: 'app/settings/settings.html'
-                })
-            .otherwise({ redirectTo: '/' });
+            .otherwise({ redirectTo: '/home' });
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', 'AUTH_EVENTS'];
@@ -68,15 +60,15 @@
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             console.log($location.path());
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var restrictedPage = $.inArray($location.path(), ['/home', '/register']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                $location.path('/');
+                $location.path('/home');
             }
         });
 
         $rootScope.$on(AUTH_EVENTS.loginFailed, function () {
-            $location.path('/');
+            $location.path('/home');
         });
     }
 
