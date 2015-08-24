@@ -33,7 +33,14 @@
 </head>
 <body>
     <div>
-        <div data-ng-include="'/app/layout/shell.html'"></div>
+        <header class="clearfix">
+            <div data-ng-include="'/app/layout/topnav.html'"></div>
+        </header>
+        <section id="content" class="content">
+            <div data-ng-include="'/app/layout/sidebar.html'"></div>
+
+            <div data-ng-view></div>
+        </section>
     </div>
 
     <span data-cc-scroll-to-top></span>

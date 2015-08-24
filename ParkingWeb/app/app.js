@@ -54,21 +54,29 @@
             .otherwise({ redirectTo: '/' });
     }
 
-    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
-    function run($rootScope, $location, $cookieStore, $http) {
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', 'AUTH_EVENTS'];
+    function run($rootScope, $location, $cookieStore, $http, AUTH_EVENTS) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
+            $rootScope.globals.isLoggedIn = true;
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
+        else
+            $rootScope.globals.isLoggedIn = false;
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            console.log($location.path());
             // redirect to login page if not logged in and trying to access a restricted page
             var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/');
             }
+        });
+
+        $rootScope.$on(AUTH_EVENTS.loginFailed, function () {
+            $location.path('/');
         });
     }
 

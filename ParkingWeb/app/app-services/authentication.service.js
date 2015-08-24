@@ -25,9 +25,11 @@
                     .then(function (user) {
                         if (user !== null && user.password === password) {
                             response = { success: true };
+                            $rootScope.globals.isLoggedIn = true;
                             $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
                         } else {
                             response = { success: false, message: 'Username or password is incorrect' };
+                            $rootScope.globals.isLoggedIn = false;
                             $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
                         }
                         callback(response);
@@ -61,6 +63,8 @@
             $rootScope.globals = {};
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
+            $rootScope.globals.isLoggedIn = false;
+            $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
         }
     }
 

@@ -10,18 +10,14 @@
     <div class="navbar-collapse collapse">
         <div class="pull-right navbar-logo">
             <ul class="nav navbar-nav pull-right">
-                <li>
-                    <button ng-click="vm.showlogin()">
+                <li ng-hide="vm.isLoggedIn">
+                    <a href="#" ng-click="vm.showlogin()">
                         Login
-                    </button>
-                </li>
-                <li>
-                    <a href="#" target="_blank">
-                        <img src="" />
                     </a>
                 </li>
-                <li class="dropdown dropdown-big">
-                    <a href="#" target="_blank">
+                <li ng-show="vm.isLoggedIn">
+                    <a href="#" ng-click="vm.logout()">
+                        Logout
                     </a>
                 </li>
             </ul>

@@ -9,10 +9,11 @@
         var vm = this;
         var routes = getRoutes();
         vm.isCurrent = isCurrent;
-        vm.isNotLoggedIn = !$rootScope.globals.currentUser;
+        vm.isLoggedIn = $rootScope.globals.isLoggedIn;
+
         activate();
-        $rootScope.$on(AUTH_EVENTS.loginSuccess, function () { vm.isNotLoggedIn = false; });
-        $rootScope.$on(AUTH_EVENTS.loginFailed, function () { vm.isNotLoggedIn = true; });
+        $rootScope.$on(AUTH_EVENTS.loginSuccess, function () { vm.isLoggedIn = true; });
+        $rootScope.$on(AUTH_EVENTS.notAuthenticated, function () { vm.isLoggedIn = false; });
 
         function activate() { getNavRoutes(); }
 
