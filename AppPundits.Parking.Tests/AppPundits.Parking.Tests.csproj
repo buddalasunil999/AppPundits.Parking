@@ -101,12 +101,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AppPundits.Parking\AppPundits.Parking.API.csproj">
-      <Project>{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}</Project>
-      <Name>AppPundits.Parking.API</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

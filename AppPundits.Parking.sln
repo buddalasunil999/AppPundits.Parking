@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPundits.Parking.API", "AppPundits.Parking\AppPundits.Parking.API.csproj", "{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPundits.Parking.Tests", "AppPundits.Parking.Tests\AppPundits.Parking.Tests.csproj", "{B7629E81-D543-4319-AE07-F5FF25934568}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.MySQL", "..\..\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\Identity\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj", "{26F6ECF9-4369-417B-8CF2-54FA92DF3660}"
@@ -30,6 +28,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppPundits.ParkingApp(1)", 
 		SlnRelativePath = "AppPundits.ParkingApp\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppsPundits.Parking.API", "AppsPundits.Parking.API\AppsPundits.Parking.API.csproj", "{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}"
+EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite1(2)", "ParkingWeb\", "{853E1E68-EA61-41CC-89F8-1EE04147A74C}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -48,7 +48,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite1(2)", "ParkingWeb\"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "23701"
-		SlnRelativePath = "ParkingWeb\"
 	EndProjectSection
 EndProject
 Global
@@ -57,10 +56,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,6 +68,10 @@ Global
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Release|Any CPU.Build.0 = Release|Any CPU
 		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{853E1E68-EA61-41CC-89F8-1EE04147A74C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
