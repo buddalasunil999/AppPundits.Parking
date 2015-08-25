@@ -1,11 +1,42 @@
-﻿<section class="mainbar" data-ng-controller="admin as vm">
+﻿<section class="mainbar">
     <section class="matter">
         <div class="container">
             <div class="row">
+                <button type="button" class="btn btn-info btn-lg" ng-click="add()">Add User</button>
+            </div>
+            <div class="row">
                 <div class="widget wviolet">
                     <div data-cc-widget-header title="{{vm.title}}"></div>
-                    <div class="widget-content user">
-                        <h3>TODO: </h3>
+                    <div class="widget-content table-responsive">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Enabled</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="p in users">
+                                    <td>{{p.Id}}</td>
+                                    <td>{{p.UserName}}</td>
+                                    <td>{{p.Email}}</td>
+                                    <td>{{p.Phone}}</td>
+                                    <td>
+                                        <div ng-switch on="p.Enabled">
+                                            <span ng-switch-when="true">Yes</span>
+                                            <span ng-switch-default>No</span>
+                                        </div>
+                                    </td>
+                                    <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="edit(p)"></i></td>
+                                    <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="widget-foot">
                         <div class="clearfix"></div>

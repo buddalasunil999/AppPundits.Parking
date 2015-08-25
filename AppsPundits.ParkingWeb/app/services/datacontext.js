@@ -49,7 +49,9 @@
             getNewInfringement: getNewInfringement,
             getOffenses: getOffenses,
             saveOffense: saveOffense,
-            removeOffense: removeOffense
+            removeOffense: removeOffense,
+            getUsers: getUsers,
+            removeUser: removeUser
         };
 
         return service;
@@ -100,6 +102,18 @@
 
         function removeOffense(id) {
             return $http.delete(host + '/offenses/' + id).then(function (response) {
+                return response;
+            });
+        }
+
+        function getUsers() {
+            return $http.get(host + '/users').then(function (response) {
+                return response.data;
+            });
+        }
+
+        function removeUser(id) {
+            return $http.delete(host + '/users/' + id).then(function (response) {
                 return response;
             });
         }
