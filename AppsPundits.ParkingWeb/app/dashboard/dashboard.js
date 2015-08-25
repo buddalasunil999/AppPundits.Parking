@@ -16,6 +16,7 @@
             var modalInstance = $modal.open({
                 templateUrl: '/app/dashboard/manageinfringement.html',
                 controller: 'infringementcontroller',
+                size: 'lg',
                 resolve: {
                     items: function () {
                         return [];
