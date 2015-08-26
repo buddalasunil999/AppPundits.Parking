@@ -51,7 +51,9 @@
             saveOffense: saveOffense,
             removeOffense: removeOffense,
             getUsers: getUsers,
-            removeUser: removeUser
+            removeUser: removeUser,
+            login: login,
+            host: host
         };
 
         return service;
@@ -84,7 +86,7 @@
                 return response.data;
             });
         }
-        
+
         function getOffenses() {
             return $http.get(host + '/offenses').then(function (response) {
                 return response.data;
@@ -117,6 +119,13 @@
                 return response;
             });
         }
+
+        function login(username, authdata) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            return $http.post(host + '/user/' + username).then(function (response) {
+                return response;
+            });
+        };
     }]);
 
 })();

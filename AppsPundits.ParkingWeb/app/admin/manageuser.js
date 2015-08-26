@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module('app').controller('manageuser', ['$modalInstance', 'datacontext', 'items', function ($modalInstance, datacontext, items) {
+    angular.module('app').controller('manageuser', ['$modalInstance', 'UserService', 'datacontext', 'items', function ($modalInstance, UserService, datacontext, items) {
 
         var vm = this;
 
@@ -22,12 +22,27 @@
         }
 
         vm.save = function () {
-            datacontext.saveUser(vm.user).then(function (result) {
-                if (isedit)
-                    $modalInstance.close(vm.user);
-                else
-                    $modalInstance.close(result.data);
-            });
+            vm.dataLoading = true;
+            vm.user.ConfirmPassword = vm.user.Password;
+            UserService.Create(vm.user)
+                .then(function (response) {
+                    if (response.success) {
+                        if (isedit)
+                            $modalInstance.close(vm.user);
+                        else
+                            $modalInstance.close(result.data);
+                    } else {
+                        vm.error = response.message;
+                        vm.dataLoading = false;
+                    }
+                });
+
+            //datacontext.saveUser(vm.user).then(function (result) {
+            //    if (isedit)
+            //        $modalInstance.close(vm.user);
+            //    else
+            //        $modalInstance.close(result.data);
+            //});
         }
 
         vm.cancel = function () {

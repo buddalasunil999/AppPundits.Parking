@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(AppPundits.Parking.Startup))]
+//[assembly: OwinStartup(typeof(AppPundits.Parking.Startup))]
 
 namespace AppPundits.Parking
 {

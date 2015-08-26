@@ -5,20 +5,24 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using AppPundits.Parking.Models;
 using AppPundits.Parking.Models.Repositories;
+using AppPundits.Parking.Filters;
 
 namespace AppPundits.Parking.Controllers
 {
+    
     public class CarTypesController : ApiController
     {
         private CarTypeRepository rep = new CarTypeRepository();
 
         // GET: api/CarTypes
+        [AllowAnonymous]
         public IEnumerable<CarType> GetCarTypes()
         {
             return rep.GetCarTypes();
         }
 
         // GET: api/CarTypes/5
+        [AllowAnonymous]
         [ResponseType(typeof(CarType))]
         public IHttpActionResult GetCarType(int id)
         {

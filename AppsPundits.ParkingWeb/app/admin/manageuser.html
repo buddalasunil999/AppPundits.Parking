@@ -4,6 +4,7 @@
         <h4 class="modal-title">{{vm.dialogtitle}}</h4>
     </div>
     <div class="modal-body">
+        <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
         <div class="form-group">
             <label for="username" class="control-label">User Name:</label>
             <input type="text" ng-model="vm.user.UserName" class="form-control" id="username" required>
@@ -17,11 +18,16 @@
             <input type="text" ng-model="vm.user.PhoneNumber" class="form-control" id="phonenumber" required>
         </div>
         <div class="form-group">
+            <label for="password" class="control-label">Password:</label>
+            <input type="text" ng-model="vm.user.Password" class="form-control" id="password" required>
+        </div>
+        <div class="form-group">
             <label for="locked" class="control-label">Locked:</label>
-            <input type="checkbox" ng-model="vm.user.Locked" id="locked" required>
+            <input type="checkbox" ng-model="vm.user.Locked" id="locked">
         </div>
     </div>
     <div class="modal-footer">
+        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default" ng-click="vm.cancel()">Close</button>
     </div>

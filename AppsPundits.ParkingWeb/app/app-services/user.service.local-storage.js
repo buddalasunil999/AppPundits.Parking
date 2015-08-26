@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('UserService', UserService);
+        .factory('FakeUserService', UserService);
 
     UserService.$inject = ['$timeout', '$filter', '$q'];
     function UserService($timeout, $filter, $q) {

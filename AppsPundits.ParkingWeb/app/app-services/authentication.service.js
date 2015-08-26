@@ -5,8 +5,8 @@
         .module('app')
         .factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService', 'AUTH_EVENTS'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService, AUTH_EVENTS) {
+    AuthenticationService.$inject = ['$http', 'datacontext', '$cookieStore', '$rootScope', '$timeout', 'UserService', 'AUTH_EVENTS'];
+    function AuthenticationService($http, datacontext, $cookieStore, $rootScope, $timeout, UserService, AUTH_EVENTS) {
         var service = {};
 
         service.Login = Login;
@@ -19,39 +19,49 @@
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function () {
-                var response;
-                UserService.GetByUsername(username)
-                    .then(function (user) {
-                        if (user !== null && user.password === password) {
-                            response = { success: true };
-                            $rootScope.globals.isLoggedIn = true;
-                            $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-                        } else {
-                            response = { success: false, message: 'Username or password is incorrect' };
-                            $rootScope.globals.isLoggedIn = false;
-                            $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-                        }
-                        callback(response);
-                    });
-            }, 1000);
+            //$timeout(function () {
+            //    var response;
+            //    UserService.GetByUsername(username)
+            //        .then(function (user) {
+            //            if (user !== null && user.password === password) {
+            //                response = { success: true };
+            //                $rootScope.globals.isLoggedIn = true;
+            //                $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+            //                SetCredentials(Base64.encode(username + ':' + password), response);
+            //            } else {
+            //                response = { success: false, message: 'Username or password is incorrect' };
+            //                $rootScope.globals.isLoggedIn = false;
+            //                $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+            //            }
+            //            callback(response);
+            //        });
+            //}, 1000);
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-
+            var result;
+            var authdata = Base64.encode(username + ':' + password);
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            return $http.get(datacontext.host + '/users').then(function (response) {
+                SetCredentials(authdata, response.data);
+                result = { success: true };
+                $rootScope.globals.isLoggedIn = true;
+                $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+                callback(result);
+            }, function (response) {
+                result = { success: false, message: 'Username or password is incorrect' };
+                $rootScope.globals.isLoggedIn = false;
+                $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+                callback(result);
+            });
         }
 
-        function SetCredentials(username, password) {
-            var authdata = Base64.encode(username + ':' + password);
-
+        function SetCredentials(authdata, info) {
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
+                    authdata: authdata,
+                    Info: info
                 }
             };
 

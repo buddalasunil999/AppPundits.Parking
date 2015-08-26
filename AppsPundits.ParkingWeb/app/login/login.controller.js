@@ -19,7 +19,6 @@
             vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
                     $modalInstance.close(true);
                 } else {
                     FlashService.Error(response.message);
