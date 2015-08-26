@@ -2,7 +2,7 @@
     <section class="matter">
         <div class="container">
             <div class="row">
-                <button type="button" class="btn btn-info btn-lg" ng-click="add()">Add User</button>
+                <button type="button" class="btn btn-info btn-lg" ng-click="vm.add()">Add User</button>
             </div>
             <div class="row">
                 <div class="widget wviolet">
@@ -14,26 +14,26 @@
                                     <th>Id</th>
                                     <th>User Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Enabled</th>
+                                    <th>Phone Number</th>
+                                    <th>Locked</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-ng-repeat="p in users">
+                                <tr data-ng-repeat="p in vm.users">
                                     <td>{{p.Id}}</td>
                                     <td>{{p.UserName}}</td>
                                     <td>{{p.Email}}</td>
-                                    <td>{{p.Phone}}</td>
+                                    <td>{{p.PhoneNumber}}</td>
                                     <td>
-                                        <div ng-switch on="p.Enabled">
+                                        <div ng-switch on="p.Locked">
                                             <span ng-switch-when="true">Yes</span>
                                             <span ng-switch-default>No</span>
                                         </div>
                                     </td>
-                                    <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="edit(p)"></i></td>
-                                    <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="remove(p)"></i></td>
+                                    <td><i class="fa fa-pencil-square" style="cursor: pointer" ng-click="vm.edit(p)"></i></td>
+                                    <td><i class="fa fa-trash-o" style="cursor: pointer" ng-click="vm.remove(p)"></i></td>
                                 </tr>
                             </tbody>
                         </table>

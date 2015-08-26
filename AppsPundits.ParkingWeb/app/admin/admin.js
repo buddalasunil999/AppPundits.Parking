@@ -6,7 +6,7 @@
     function admin($modal, datacontext) {
         
         var vm = this;
-        vm.title = 'Admin';
+        vm.title = 'Users';
         vm.users = [];
 
         function activate() {
