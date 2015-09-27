@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
+using System.ComponentModel;
+using System.Configuration;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
@@ -40,29 +44,62 @@ namespace AppPundits.Parking.Filters
         public static UserManager<IdentityUser> GetUserManager()
         {
             if (manager == null)
+            {
                 manager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new UsersDbContext()));
+                manager.EmailService = new EmailService();
+            }
             return manager;
         }
+    }
 
-        //private class Initializer : CreateDatabaseIfNotExists<UsersDbContext>
-        //{
-        //    protected override void Seed(UsersDbContext context)
-        //    {
-        //        IdentityRole role = context.Roles.Add(new IdentityRole("User"));
+    public class EmailService : IIdentityMessageService
+    {
+        static bool mailSent = false;
 
-        //        IdentityUser user = new IdentityUser("SampleUser");
-        //        user.Roles.Add(new IdentityUserRole() { RoleId = role.Id, UserId = user.Id });
-        //        user.Claims.Add(new IdentityUserClaim
-        //        {
-        //            ClaimType = "hasRegistered",
-        //            ClaimValue = "true"
-        //        });
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await configSendGridasync(message);
+        }
 
-        //        user.PasswordHash = new PasswordHasher().HashPassword("secret");
-        //        context.Users.Add(user);
-        //        context.SaveChanges();
-        //        base.Seed(context);
-        //    }
-        //}
+        // Use NuGet to install SendGrid (Basic C# client lib) 
+        private async Task configSendGridasync(IdentityMessage data)
+        {
+            SmtpClient client = new SmtpClient(ConfigurationManager.AppSettings["smtphost"]);
+            // Specify the e-mail sender. 
+            // Create a mailing address that includes a UTF8 character 
+            // in the display name.
+            MailAddress from = new MailAddress(ConfigurationManager.AppSettings["fromaddress"], ConfigurationManager.AppSettings["fromdisplayname"],
+            System.Text.Encoding.UTF8);
+            // Set destinations for the e-mail message.
+            MailAddress to = new MailAddress(data.Destination);
+            // Specify the message content.
+            MailMessage message = new MailMessage(from, to);
+            message.Body = data.Body;
+            // Include some non-ASCII characters in body and subject. 
+            string someArrows = new string(new char[] { '\u2190', '\u2191', '\u2192', '\u2193' });
+            message.Body += Environment.NewLine + someArrows;
+            message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.Subject = data.Subject + someArrows;
+            message.SubjectEncoding = System.Text.Encoding.UTF8;
+            // Set the method that is called back when the send operation ends.
+            client.SendCompleted += new
+            SendCompletedEventHandler(SendCompletedCallback);
+            // The userState can be any object that allows your callback  
+            // method to identify this send operation. 
+            // For this example, the userToken is a string constant. 
+            string userState = "test message1";
+            client.SendAsync(message, userState);
+        }
+
+        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            // Get the unique identifier for this asynchronous operation.
+            String token = (string)e.UserState;
+
+            if (!e.Cancelled && e.Error == null)
+            {
+                mailSent = true;
+            }
+        }
     }
 }

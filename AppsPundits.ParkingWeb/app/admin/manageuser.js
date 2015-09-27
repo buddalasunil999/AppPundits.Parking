@@ -1,6 +1,7 @@
 ﻿(function () {
     'use strict';
-    angular.module('app').controller('manageuser', ['$modalInstance', 'UserService', 'datacontext', 'items', function ($modalInstance, UserService, datacontext, items) {
+    angular.module('app').controller('manageuser', ['$modalInstance', '$location', 'UserService', 'datacontext', 'items', 
+        function ($modalInstance, $location, UserService, datacontext, items) {
 
         var vm = this;
 
@@ -16,7 +17,8 @@
                 'UserName': '',
                 'Email': '',
                 'PhoneNumber': '',
-                'Locked': ''
+                'Locked': '',
+                'Role': ''
             };
             vm.dialogtitle = 'Add User';
         }
@@ -29,8 +31,14 @@
                     if (response.success) {
                         if (isedit)
                             $modalInstance.close(vm.user);
-                        else
+                        else {
+                            var resetobj = {
+                                'User': user,
+                                'Url': $location.protocol() + '//' + $location.host() + ':' + $location.port() + '/' + 'forgotpassword'
+                            };
+                            UserService.SendPasswordEmail(resetobj);
                             $modalInstance.close(result.data);
+                        }
                     } else {
                         vm.error = response.message;
                         vm.dataLoading = false;

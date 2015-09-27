@@ -34,6 +34,10 @@
             return $http.post(datacontext.host + '/users', user).then(handleSuccess, handleError('Error creating user'));
         }
 
+        function SendPasswordEmail(resetobj) {
+            return $http.post(datacontext.host + '/users/sendpasswordemail', resetobj).then(handleSuccess, handleError('Error sending email to user'));
+        }
+
         function Update(user) {
             return $http.put(datacontext.host + '/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }

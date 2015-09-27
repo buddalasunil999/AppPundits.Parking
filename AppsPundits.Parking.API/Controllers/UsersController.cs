@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Linq;
 
 namespace AppPundits.Parking.Controllers
 {
@@ -14,12 +15,14 @@ namespace AppPundits.Parking.Controllers
     {
         [IdentityBasicAuthentication] // Enable authentication via an ASP.NET Identity user name and password
         [Authorize] // Require some form of authentication
-        public IEnumerable<string> GetAll()
+        public IEnumerable<IdentityUser> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            var manager = UsersDbContext.GetUserManager();
+            return manager.Users.ToList();
         }
 
         [IdentityBasicAuthentication]
+        [Authorize]
         [Route("info")]
         public UserInfo Get()
         {
@@ -49,50 +52,59 @@ namespace AppPundits.Parking.Controllers
             return info;
         }
 
-        [AllowAnonymous]
+        [IdentityBasicAuthentication]
+        [Authorize]
         public async Task<IHttpActionResult> Post([FromBody]RegisterUserModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
+
+            var manager = UsersDbContext.GetUserManager();
 
             var user = new IdentityUser() { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber };
 
-            IdentityResult result = await UsersDbContext.GetUserManager().CreateAsync(user, model.Password);
-
+            IdentityResult result = await manager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
-            {
                 return GetErrorResult(result);
-            }
+
+            result = await manager.AddToRoleAsync(model.UserName, model.Role);
+            if (!result.Succeeded)
+                return GetErrorResult(result);
 
             return Ok();
         }
 
-        //[IdentityBasicAuthentication]
-        //[Authorize]
-        //public void Post([FromBody]string value)
-        //{
-        //}
-        
+        [HttpPost]
+        [IdentityBasicAuthentication]
+        [Route("SendPasswordEmail")]
+        public async Task<IHttpActionResult> SendPasswordEmail(SendPasswordBindingModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var manager = UsersDbContext.GetUserManager();
+            var user = await manager.FindByNameAsync(model.User.UserName);
+            await manager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + model.Url + "\">here</a>");
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [IdentityBasicAuthentication]
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
             IdentityResult result = await UsersDbContext.GetUserManager().AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
 
             if (!result.Succeeded)
-            {
                 return GetErrorResult(result);
-            }
 
             return Ok();
         }
-
+        
         [IdentityBasicAuthentication]
         [Authorize]
         public void Put(int id, [FromBody]string value)
@@ -144,7 +156,9 @@ namespace AppPundits.Parking.Controllers
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        
+
+        public string Role { set; get; }
+
         [Display(Name = "PhoneNumber")]
         public string PhoneNumber { get; set; }
 
@@ -172,5 +186,11 @@ namespace AppPundits.Parking.Controllers
         public string Type { get; set; }
 
         public string Value { get; set; }
+    }
+
+    public class SendPasswordBindingModel
+    {
+        public IdentityUser User { set; get; }
+        public string Url { set; get; }
     }
 }
