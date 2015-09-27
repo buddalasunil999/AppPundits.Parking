@@ -363,7 +363,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\Identity\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj">
+    <ProjectReference Include="..\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj">
       <Project>{26f6ecf9-4369-417b-8cf2-54fa92df3660}</Project>
       <Name>AspNet.Identity.MySQL</Name>
     </ProjectReference>

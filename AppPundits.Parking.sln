@@ -5,29 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPundits.Parking.Tests", "AppPundits.Parking.Tests\AppPundits.Parking.Tests.csproj", "{B7629E81-D543-4319-AE07-F5FF25934568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.MySQL", "..\..\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\Identity\AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj", "{26F6ECF9-4369-417B-8CF2-54FA92DF3660}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppPundits.ParkingApp", "AppPundits.ParkingApp\", "{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_7031"
-		Debug.AspNetCompiler.PhysicalPath = "AppPundits.ParkingApp\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7031\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_7031"
-		Release.AspNetCompiler.PhysicalPath = "AppPundits.ParkingApp\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7031\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "7031"
-		SlnRelativePath = "AppPundits.ParkingApp\"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppsPundits.Parking.API", "AppsPundits.Parking.API\AppsPundits.Parking.API.csproj", "{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppsPundits.ParkingWeb", "AppsPundits.ParkingWeb\", "{3FE91E59-82AC-4345-B4F1-677D463A200D}"
@@ -51,6 +28,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppsPundits.ParkingWeb", "A
 		SlnRelativePath = "AppsPundits.ParkingWeb\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.MySQL", "AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj", "{26F6ECF9-4369-417B-8CF2-54FA92DF3660}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,14 +40,6 @@ Global
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7629E81-D543-4319-AE07-F5FF25934568}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{76EFB7E8-3D8E-420D-B0C1-945EC32EEB69}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,6 +48,10 @@ Global
 		{3FE91E59-82AC-4345-B4F1-677D463A200D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FE91E59-82AC-4345-B4F1-677D463A200D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FE91E59-82AC-4345-B4F1-677D463A200D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F6ECF9-4369-417B-8CF2-54FA92DF3660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
