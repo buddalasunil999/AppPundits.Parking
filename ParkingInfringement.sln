@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPundits.Parking.Tests", "AppPundits.Parking.Tests\AppPundits.Parking.Tests.csproj", "{B7629E81-D543-4319-AE07-F5FF25934568}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingInfringement.Tests", "ParkingInfringement.Tests\ParkingInfringement.Tests.csproj", "{B7629E81-D543-4319-AE07-F5FF25934568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppsPundits.Parking.API", "AppsPundits.Parking.API\AppsPundits.Parking.API.csproj", "{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingInfringement.API", "ParkingInfringement.API\ParkingInfringement.API.csproj", "{B0AF8AA8-5A0C-41DA-AC24-C9F05FC27427}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppsPundits.ParkingWeb", "AppsPundits.ParkingWeb\", "{3FE91E59-82AC-4345-B4F1-677D463A200D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppsPundits.ParkingWeb", "ParkingInfringementWeb\", "{3FE91E59-82AC-4345-B4F1-677D463A200D}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_29871"
-		Debug.AspNetCompiler.PhysicalPath = "AppsPundits.ParkingWeb\"
+		Debug.AspNetCompiler.PhysicalPath = "ParkingInfringementWeb\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_29871\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_29871"
-		Release.AspNetCompiler.PhysicalPath = "AppsPundits.ParkingWeb\"
+		Release.AspNetCompiler.PhysicalPath = "ParkingInfringementWeb\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_29871\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "29871"
-		SlnRelativePath = "AppsPundits.ParkingWeb\"
+		SlnRelativePath = "ParkingInfringementWeb\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.MySQL", "AspNet.Identity.MySQL\AspNet.Identity.MySQL.csproj", "{26F6ECF9-4369-417B-8CF2-54FA92DF3660}"
