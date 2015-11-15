@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace AppPundits.Parking.Models.Repositories
+namespace ParkingInfringement.API.Models.Repositories
 {
     public class CustomerRepository : IDisposable
     {

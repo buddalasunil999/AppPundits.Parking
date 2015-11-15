@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace AppPundits.Parking.Areas.HelpPage
+namespace ParkingInfringement.API.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

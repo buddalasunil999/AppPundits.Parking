@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using AppPundits.Parking.Areas.HelpPage.ModelDescriptions;
-using AppPundits.Parking.Areas.HelpPage.Models;
+using ParkingInfringement.API.Areas.HelpPage.ModelDescriptions;
+using ParkingInfringement.API.Areas.HelpPage.Models;
 
-namespace AppPundits.Parking.Areas.HelpPage
+namespace ParkingInfringement.API.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

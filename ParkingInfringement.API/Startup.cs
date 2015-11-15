@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-//[assembly: OwinStartup(typeof(AppPundits.Parking.Startup))]
+//[assembly: OwinStartup(typeof(ParkingInfringement.API.Startup))]
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public partial class Startup
     {

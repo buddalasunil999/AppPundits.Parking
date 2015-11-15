@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using AppPundits.Parking.Areas.HelpPage.ModelDescriptions;
+using ParkingInfringement.API.Areas.HelpPage.ModelDescriptions;
 
-namespace AppPundits.Parking.Areas.HelpPage
+namespace ParkingInfringement.API.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

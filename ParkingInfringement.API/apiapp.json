@@ -1,10 +1,10 @@
 ﻿{
   "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
-  "id": "AppPundits.Parking.API",
+  "id": "ParkingInfringement.API.API",
   "namespace": "microsoft.com",
   "gateway": "2015-01-14",
   "version": "1.0.0",
-  "title": "AppPundits.Parking.API",
+  "title": "ParkingInfringement.API.API",
   "summary": "",
   "author": "",
   "endpoints": {

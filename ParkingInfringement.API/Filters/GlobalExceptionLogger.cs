@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public class GlobalExceptionLogger
     : ExceptionLogger

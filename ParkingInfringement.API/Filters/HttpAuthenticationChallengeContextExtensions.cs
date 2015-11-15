@@ -1,9 +1,9 @@
-﻿using AppPundits.Parking.Results;
+﻿using ParkingInfringement.API.Results;
 using System;
 using System.Net.Http.Headers;
 using System.Web.Http.Filters;
 
-namespace AppPundits.Parking.Filters
+namespace ParkingInfringement.API.Filters
 {
     public static class HttpAuthenticationChallengeContextExtensions
     {

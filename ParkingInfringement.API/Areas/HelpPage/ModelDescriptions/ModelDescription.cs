@@ -1,6 +1,6 @@
 using System;
 
-namespace AppPundits.Parking.Areas.HelpPage.ModelDescriptions
+namespace ParkingInfringement.API.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

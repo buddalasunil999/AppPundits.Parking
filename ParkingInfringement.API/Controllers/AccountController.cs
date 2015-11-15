@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using AppPundits.Parking.Models;
-using AppPundits.Parking.Providers;
-using AppPundits.Parking.Results;
+using ParkingInfringement.API.Models;
+using ParkingInfringement.API.Providers;
+using ParkingInfringement.API.Results;
 
-namespace AppPundits.Parking.Controllers
+namespace ParkingInfringement.API.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

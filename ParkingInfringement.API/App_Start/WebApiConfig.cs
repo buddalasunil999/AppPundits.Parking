@@ -5,7 +5,7 @@ using System.Configuration;
 using System.Web.Http.ExceptionHandling;
 using log4net;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public static class WebApiConfig
     {

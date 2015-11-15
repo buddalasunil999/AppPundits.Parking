@@ -3,7 +3,7 @@ using System;
 using System.Net.Http;
 using System.Web.Http.Tracing;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public class ApiTracer : ITraceWriter
     {

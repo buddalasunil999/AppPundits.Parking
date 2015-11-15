@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AppPundits.Parking.Models
+namespace ParkingInfringement.API.Models
 {
     [Table("cartype")]
     public class CarType

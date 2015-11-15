@@ -5,10 +5,10 @@
 //using System.Text;
 //using System.Web.Http;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
-//using AppPundits.Parking;
-//using AppPundits.Parking.Controllers;
+//using ParkingInfringement.API;
+//using ParkingInfringement.API.Controllers;
 
-//namespace AppPundits.Parking.Tests.Controllers
+//namespace ParkingInfringement.API.Tests.Controllers
 //{
 //    [TestClass]
 //    public class ValuesControllerTest

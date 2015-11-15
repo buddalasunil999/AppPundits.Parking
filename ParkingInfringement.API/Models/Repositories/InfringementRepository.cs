@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AppPundits.Parking.Models.Repositories
+namespace ParkingInfringement.API.Models.Repositories
 {
     public class InfringementRepository : IDisposable
     {

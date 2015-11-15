@@ -2,10 +2,10 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using AppPundits.Parking.Models;
+using ParkingInfringement.API.Models;
 using AspNet.Identity.MySQL;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 

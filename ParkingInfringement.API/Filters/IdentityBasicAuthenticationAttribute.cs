@@ -9,7 +9,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AppPundits.Parking.Filters
+namespace ParkingInfringement.API.Filters
 {
     public class IdentityBasicAuthenticationAttribute : BasicAuthenticationAttribute
     {

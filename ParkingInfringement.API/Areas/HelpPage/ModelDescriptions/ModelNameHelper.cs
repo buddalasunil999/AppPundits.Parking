@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace AppPundits.Parking.Areas.HelpPage.ModelDescriptions
+namespace ParkingInfringement.API.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

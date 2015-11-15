@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace AppPundits.Parking.Areas.HelpPage.ModelDescriptions
+namespace ParkingInfringement.API.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

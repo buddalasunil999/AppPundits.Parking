@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace AppPundits.Parking.Models
+namespace ParkingInfringement.API.Models
 {
     // Models used as parameters to AccountController actions.
 

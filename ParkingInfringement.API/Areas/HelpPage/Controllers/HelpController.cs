@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using AppPundits.Parking.Areas.HelpPage.ModelDescriptions;
-using AppPundits.Parking.Areas.HelpPage.Models;
+using ParkingInfringement.API.Areas.HelpPage.ModelDescriptions;
+using ParkingInfringement.API.Areas.HelpPage.Models;
 
-namespace AppPundits.Parking.Areas.HelpPage.Controllers
+namespace ParkingInfringement.API.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

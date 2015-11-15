@@ -1,4 +1,4 @@
-﻿using AppPundits.Parking.Results;
+﻿using ParkingInfringement.API.Results;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
-namespace AppPundits.Parking.Filters
+namespace ParkingInfringement.API.Filters
 {
     public abstract class BasicAuthenticationAttribute : Attribute, IAuthenticationFilter
     {

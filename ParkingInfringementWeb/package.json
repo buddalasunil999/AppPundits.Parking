@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buddalasunil999/AppPundits.Parking.git"
+    "url": "git+https://github.com/buddalasunil999/ParkingInfringement.API.git"
   },
   "keywords": [
     "app",
@@ -20,9 +20,9 @@
   "author": "AppsPundits",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/buddalasunil999/AppPundits.Parking/issues"
+    "url": "https://github.com/buddalasunil999/ParkingInfringement.API/issues"
   },
-  "homepage": "https://github.com/buddalasunil999/AppPundits.Parking#readme",
+  "homepage": "https://github.com/buddalasunil999/ParkingInfringement.API#readme",
   "devDependencies": {
     "browser-sync": "^2.8.2",
     "del": "^1.2.0",

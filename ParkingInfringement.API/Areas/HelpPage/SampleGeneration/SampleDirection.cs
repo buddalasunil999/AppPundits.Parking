@@ -1,4 +1,4 @@
-namespace AppPundits.Parking.Areas.HelpPage
+namespace ParkingInfringement.API.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

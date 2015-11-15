@@ -1,5 +1,5 @@
-﻿using AppPundits.Parking.Filters;
-using AppPundits.Parking.Models;
+﻿using ParkingInfringement.API.Filters;
+using ParkingInfringement.API.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Linq;
 
-namespace AppPundits.Parking.Controllers
+namespace ParkingInfringement.API.Controllers
 {
     public class UsersController : ApiController
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppPundits.Parking.Models.Repositories
+namespace ParkingInfringement.API.Models.Repositories
 {
     public class TransactionRepository : IDisposable
     {

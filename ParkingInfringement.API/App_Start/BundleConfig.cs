@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public class BundleConfig
     {

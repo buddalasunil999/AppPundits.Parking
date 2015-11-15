@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace AppPundits.Parking.Results
+namespace ParkingInfringement.API.Results
 {
     public class AddChallengeOnUnauthorizedResult : IHttpActionResult
     {

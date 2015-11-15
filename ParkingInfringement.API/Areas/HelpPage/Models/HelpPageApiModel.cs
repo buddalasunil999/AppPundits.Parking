@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using AppPundits.Parking.Areas.HelpPage.ModelDescriptions;
+using ParkingInfringement.API.Areas.HelpPage.ModelDescriptions;
 
-namespace AppPundits.Parking.Areas.HelpPage.Models
+namespace ParkingInfringement.API.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

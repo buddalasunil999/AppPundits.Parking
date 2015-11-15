@@ -3,11 +3,11 @@ using System.Data.Entity.Infrastructure;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
-using AppPundits.Parking.Models;
-using AppPundits.Parking.Models.Repositories;
-using AppPundits.Parking.Filters;
+using ParkingInfringement.API.Models;
+using ParkingInfringement.API.Models.Repositories;
+using ParkingInfringement.API.Filters;
 
-namespace AppPundits.Parking.Controllers
+namespace ParkingInfringement.API.Controllers
 {
     
     public class CarTypesController : ApiController

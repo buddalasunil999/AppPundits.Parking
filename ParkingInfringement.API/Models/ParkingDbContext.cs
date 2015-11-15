@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace AppPundits.Parking.Models
+namespace ParkingInfringement.API.Models
 {
     class ParkingDbContext : DbContext
     {

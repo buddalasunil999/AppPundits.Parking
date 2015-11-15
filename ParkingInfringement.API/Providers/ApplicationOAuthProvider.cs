@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using AppPundits.Parking.Models;
+using ParkingInfringement.API.Models;
 
-namespace AppPundits.Parking.Providers
+namespace ParkingInfringement.API.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

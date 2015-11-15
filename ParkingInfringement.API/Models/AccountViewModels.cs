@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AppPundits.Parking.Models
+namespace ParkingInfringement.API.Models
 {
     // Models returned by AccountController actions.
 

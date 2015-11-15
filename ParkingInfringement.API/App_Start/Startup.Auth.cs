@@ -4,10 +4,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using AppPundits.Parking.Providers;
-using AppPundits.Parking.Models;
+using ParkingInfringement.API.Providers;
+using ParkingInfringement.API.Models;
 
-namespace AppPundits.Parking
+namespace ParkingInfringement.API
 {
     public partial class Startup
     {
