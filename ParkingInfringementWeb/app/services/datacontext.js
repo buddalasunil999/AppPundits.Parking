@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('app').factory('datacontext', ['$window', '$http', function ($window, $http) {
+    angular.module('app').factory('datacontext', ['$window', '$http', 'config', function ($window, $http, config) {
         var $q = $q;
-        var host = 'http://localhost:2239/api';
+        var host = config.apiurl;
 
         var service = {
             getInfringements: function () {

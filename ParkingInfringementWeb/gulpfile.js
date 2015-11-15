@@ -33,37 +33,37 @@ gulp.task('scripts-clean', function () {
 });
 
 gulp.task('jssrc-clean', function () {
-    
+
     return gulp.src('build/app/**/*.js')
    .pipe(clean());
 });
 
 gulp.task('html-clean', function () {
-    
+
     return gulp.src('build/index.html')
    .pipe(clean());
 });
 
 gulp.task('htmlsrc-clean', function () {
-    
+
     return gulp.src('build/app/**/*.html')
    .pipe(clean());
 });
 
 gulp.task('csssrc-clean', function () {
-    
+
     return gulp.src('build/Content/**/*.css')
    .pipe(clean());
 });
 
 gulp.task('imgsrc-clean', function () {
-    
+
     return gulp.src('build/Content/images/')
    .pipe(clean());
 });
 
 gulp.task('fonts-clean', function () {
-    
+
     return gulp.src('build/fonts/')
    .pipe(clean());
 });
@@ -130,6 +130,18 @@ gulp.task('watch', function () {
     gulp.watch([config.imgsrc], ['imgsrc-watch']);
     gulp.watch([config.fontssrc], ['fonts-watch']);
     gulp.watch([config.htmlsrc], ['htmlsrc-watch']);
+});
+
+gulp.task('buildsrc', ['scripts', 'jssrc', 'html', 'htmlsrc', 'csssrc', 'imgsrc', 'fonts']);
+
+gulp.task('dist', function () {
+    config.jssrc.push('config/dev.config.js');
+    return gulp.start(['buildsrc']);
+});
+
+gulp.task('proddist', function () {
+    config.jssrc.push('config/prod.config.js');
+    return gulp.start(['buildsrc']);
 });
 
 // Watch scss AND html files, doing different things with each.
