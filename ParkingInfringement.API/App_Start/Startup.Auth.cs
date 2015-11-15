@@ -52,8 +52,8 @@ namespace ParkingInfringement.API
             //    consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            //    appId: "752842944820922",
+            //    appSecret: "c1ae92a47728b21750f87f19b2a6e101");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
