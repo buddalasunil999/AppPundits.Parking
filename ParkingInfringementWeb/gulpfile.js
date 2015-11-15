@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='dist' />
+/// <binding />
 // include plug-ins
 var gulp = require('gulp');
 var clean = require('gulp-clean');
@@ -156,4 +156,4 @@ gulp.task('serve', ['scripts', 'jssrc', 'html', 'htmlsrc', 'csssrc', 'imgsrc', '
 });
 
 //Set a default tasks
-gulp.task('default', ['serve'], function () { });
+gulp.task('default', ['proddist'], function () { });
