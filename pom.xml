@@ -3,10 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.eirslett</groupId>
-  <artifactId>parkingweb</artifactId>
+  <artifactId>ParkingInfringementWeb</artifactId>
   <version>0</version>
   <packaging>pom</packaging>
-
+  <configuration>
+    <workingDirectory>ParkingInfringementWeb</workingDirectory>
+  </configuration>
   <build>
     <plugins>
       <plugin>
