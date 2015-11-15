@@ -1,9 +1,9 @@
-/// <binding />
+/// <binding BeforeBuild='dist' />
 // include plug-ins
 var gulp = require('gulp');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
