@@ -5,8 +5,8 @@
         .module('app')
         .factory('UserService', UserService);
 
-    UserService.$inject = ['$http', 'datacontext'];
-    function UserService($http, datacontext) {
+    UserService.$inject = ['$http', 'datacontext', 'config'];
+    function UserService($http, datacontext, config) {
         var service = {};
 
         service.GetAll = GetAll;
@@ -19,31 +19,31 @@
         return service;
 
         function GetAll() {
-            return $http.get(datacontext.host + '/users').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get(config.host + '/users').then(handleSuccess, handleError('Error getting all users'));
         }
 
         function GetById(id) {
-            return $http.get(datacontext.host + '/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get(config.host + '/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
         }
 
         function GetByUsername(username) {
-            return $http.get(datacontext.host + '/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
+            return $http.get(config.host + '/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
         }
 
         function Create(user) {
-            return $http.post(datacontext.host + '/users', user).then(handleSuccess, handleError('Error creating user'));
+            return $http.post(config.host + '/users', user).then(handleSuccess, handleError('Error creating user'));
         }
 
         function SendPasswordEmail(resetobj) {
-            return $http.post(datacontext.host + '/users/sendpasswordemail', resetobj).then(handleSuccess, handleError('Error sending email to user'));
+            return $http.post(config.host + '/users/sendpasswordemail', resetobj).then(handleSuccess, handleError('Error sending email to user'));
         }
 
         function Update(user) {
-            return $http.put(datacontext.host + '/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put(config.host + '/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete(datacontext.host + '/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            return $http.delete(config.host + '/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
         // private functions
