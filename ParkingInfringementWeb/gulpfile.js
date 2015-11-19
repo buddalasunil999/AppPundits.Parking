@@ -145,7 +145,7 @@ gulp.task('proddist', function () {
 });
 
 // Watch scss AND html files, doing different things with each.
-gulp.task('serve', ['scripts', 'jssrc', 'html', 'htmlsrc', 'csssrc', 'imgsrc', 'fonts', 'watch'], function () {
+gulp.task('serve', ['dist', 'watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init(['./build/css/**.*', './build/js/**.*'], {
