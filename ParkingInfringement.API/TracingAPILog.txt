@@ -1,0 +1,547 @@
+2015-11-20 01:03:39,938 [8] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users: System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Table 'parking.AspNetUsers' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.Entity.EFMySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__c.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__c.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.<ExecuteAsync>d__0`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<GetResultsAsync>d__e.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Internal.LazyAsyncEnumerator`1.<FirstMoveNextAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Infrastructure.IDbAsyncEnumerableExtensions.<FirstOrDefaultAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.<GetUserAggregateAsync>d__6c.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 01:03:47,469 [7] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users: System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Table 'parking.AspNetUsers' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.Entity.EFMySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__c.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__c.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.<ExecuteAsync>d__0`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<GetResultsAsync>d__e.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Internal.LazyAsyncEnumerator`1.<FirstMoveNextAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Infrastructure.IDbAsyncEnumerableExtensions.<FirstOrDefaultAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.<GetUserAggregateAsync>d__6c.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 09:22:37,541 [7] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users: MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host '127.0.0.1' for user 'root' using method 'mysql_native_password' failed with message: Reading from the stream has failed. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Reading from the stream has failed. ---> System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at MySql.Data.Common.MyNetworkStream.HandleOrRethrowException(Exception e)
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at MySql.AspNet.Identity.MySqlHelper.PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 57
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 38
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 09:51:12,908 [29] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: System.InvalidOperationException: Multiple actions were found that match the request: 
+GetAll on type ParkingInfringement.API.Controllers.UsersController
+Get on type ParkingInfringement.API.Controllers.UsersController
+   at System.Web.Http.Controllers.ApiControllerActionSelector.ActionSelectorCacheItem.SelectAction(HttpControllerContext controllerContext)
+   at System.Web.Http.Controllers.ApiControllerActionSelector.SelectAction(HttpControllerContext controllerContext)
+   at System.Web.Http.ApiController.ExecuteAsync(HttpControllerContext controllerContext, CancellationToken cancellationToken)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 09:52:27,248 [29] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: System.InvalidOperationException: UserId not found.
+   at Microsoft.AspNet.Identity.UserManager`2.<GetRolesAsync>d__ac.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.AsyncHelper.RunSync[TResult](Func`1 func)
+   at Microsoft.AspNet.Identity.UserManagerExtensions.GetRoles[TUser,TKey](UserManager`2 manager, TKey userId)
+   at ParkingInfringement.API.Controllers.UsersController.Get() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Controllers\UsersController.cs:line 38
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Results.AddChallengeOnUnauthorizedResult.<ExecuteAsync>d__9.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Results\AddChallengeOnUnauthorizedResult.cs:line 28
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 09:54:25,840 [44] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: System.InvalidOperationException: UserId not found.
+   at Microsoft.AspNet.Identity.UserManager`2.<GetRolesAsync>d__ac.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.AsyncHelper.RunSync[TResult](Func`1 func)
+   at Microsoft.AspNet.Identity.UserManagerExtensions.GetRoles[TUser,TKey](UserManager`2 manager, TKey userId)
+   at ParkingInfringement.API.Controllers.UsersController.Get() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Controllers\UsersController.cs:line 38
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Results.AddChallengeOnUnauthorizedResult.<ExecuteAsync>d__9.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Results\AddChallengeOnUnauthorizedResult.cs:line 28
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:01:36,404 [6] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUsers' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:06:45,034 [7] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostEntry(String hostNameOrAddress)
+   at MySql.Data.Common.MyNetworkStream.CreateStream(MySqlConnectionStringBuilder settings, Boolean unix)
+   at MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at MySql.AspNet.Identity.MySqlHelper.PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 57
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 38
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:08:11,661 [6] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostEntry(String hostNameOrAddress)
+   at MySql.Data.Common.MyNetworkStream.CreateStream(MySqlConnectionStringBuilder settings, Boolean unix)
+   at MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at MySql.AspNet.Identity.MySqlHelper.PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 57
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 38
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:13:54,339 [8] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.aspnetusers' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:36:46,634 [29] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUsers' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserRepository`1.GetByName(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRepository.cs:line 93
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 95
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:39:33,889 [30] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUserRoles' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserRoleRepository`1.PopulateRoles(String userId) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserRoleRepository.cs:line 84
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 98
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:41:46,569 [27] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUserClaims' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserClaimRepository`1.PopulateClaims(String userId) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserClaimRepository.cs:line 53
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 99
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:43:49,986 [27] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUserClaims' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserClaimRepository`1.PopulateClaims(String userId) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserClaimRepository.cs:line 53
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 99
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2015-11-20 10:46:31,775 [25] ERROR ParkingInfringement.API.GlobalExceptionLogger - Unhandled exception thrown in GET for request http://localhost:2239/api/users/info: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'parking.AspNetUserClaims' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.AspNet.Identity.MySqlHelper.ExecuteReader(MySqlConnection conn, CommandType cmdType, String cmdText, Dictionary`2 cmdParms) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlHelper.cs:line 39
+   at MySql.AspNet.Identity.Repositories.UserClaimRepository`1.PopulateClaims(String userId) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\Repositories\UserClaimRepository.cs:line 53
+   at MySql.AspNet.Identity.MySqlUserStore`1.FindByNameAsync(String userName) in c:\Git projekti\MySqlIdentity\MySql.AspNet.Identity\MySqlUserStore.cs:line 99
+   at Microsoft.AspNet.Identity.UserManager`2.FindByNameAsync(String userName)
+   at Microsoft.AspNet.Identity.UserManager`2.<FindAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.IdentityBasicAuthenticationAttribute.<AuthenticateAsync>d__0.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\IdentityBasicAuthenticationAttribute.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ParkingInfringement.API.Filters.BasicAuthenticationAttribute.<AuthenticateAsync>d__4.MoveNext() in D:\App Pundits\Project\ParkingInfringement\ParkingInfringement.API\Filters\BasicAuthenticationAttribute.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()

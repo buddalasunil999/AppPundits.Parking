@@ -42,7 +42,7 @@
             var result;
             var authdata = Base64.encode(username + ':' + password);
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-            return $http.get(datacontext.host + '/users').then(function (response) {
+            return $http.get(datacontext.host + '/users/info').then(function (response) {
                 SetCredentials(authdata, response.data);
                 result = { success: true };
                 $rootScope.globals.isLoggedIn = true;
