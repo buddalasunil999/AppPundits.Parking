@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using MySql.AspNet.Identity;
+using ParkingInfringement.API.Models;
 using System;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,10 +16,10 @@ namespace ParkingInfringement.API.Filters
     {
         protected override async Task<IPrincipal> AuthenticateAsync(string userName, string password, CancellationToken cancellationToken)
         {
-            UserManager<IdentityUser> userManager = UsersDbContext.GetUserManager();
+            var userManager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
 
             cancellationToken.ThrowIfCancellationRequested(); // Unfortunately, UserManager doesn't support CancellationTokens.
-            IdentityUser user = await userManager.FindAsync(userName, password);
+            ApplicationUser user = await userManager.FindAsync(userName, password);
 
             if (user == null)
             {
@@ -32,26 +33,7 @@ namespace ParkingInfringement.API.Filters
             return new ClaimsPrincipal(identity);
         }
     }
-
-    public class UsersDbContext : IdentityDbContext<IdentityUser>
-    {
-        private static UserManager<IdentityUser> manager;
-
-        public UsersDbContext() : base(nameOrConnectionString: "DefaultConnection")
-        {
-        }
-
-        public static UserManager<IdentityUser> GetUserManager()
-        {
-            if (manager == null)
-            {
-                manager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new UsersDbContext()));
-                manager.EmailService = new EmailService();
-            }
-            return manager;
-        }
-    }
-
+    
     public class EmailService : IIdentityMessageService
     {
         static bool mailSent = false;
@@ -100,6 +82,15 @@ namespace ParkingInfringement.API.Filters
             {
                 mailSent = true;
             }
+        }
+    }
+    
+    public class SmsService : IIdentityMessageService
+    {
+        public Task SendAsync(IdentityMessage message)
+        {
+            // Plug in your SMS service here to send a text message.
+            return Task.FromResult(0);
         }
     }
 }

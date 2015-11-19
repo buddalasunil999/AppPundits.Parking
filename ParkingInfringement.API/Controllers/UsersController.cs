@@ -1,29 +1,32 @@
 ﻿using ParkingInfringement.API.Filters;
 using ParkingInfringement.API.Models;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Linq;
+using MySql.AspNet.Identity;
 
 namespace ParkingInfringement.API.Controllers
 {
     public class UsersController : ApiController
     {
-        [IdentityBasicAuthentication] // Enable authentication via an ASP.NET Identity user name and password
-        [Authorize] // Require some form of authentication
-        public IEnumerable<IdentityUser> GetAll()
+        [IdentityBasicAuthentication]
+        [Authorize]
+        public IEnumerable<UserInfo> GetAll()
         {
-            var manager = UsersDbContext.GetUserManager();
-            return manager.Users.ToList();
+            var users = new List<UserInfo>();
+
+            var manager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
+
+            return users;
         }
 
         [IdentityBasicAuthentication]
         [Authorize]
-        [Route("info")]
+        [Route("api/users/info")]
         public UserInfo Get()
         {
             UserInfo info = new UserInfo
@@ -31,23 +34,8 @@ namespace ParkingInfringement.API.Controllers
                 UserName = User.Identity.Name
             };
 
-            ClaimsIdentity identity = User.Identity as ClaimsIdentity;
-
-            if (identity != null)
-            {
-                List<ClaimModel> claims = new List<ClaimModel>();
-
-                foreach (Claim claim in identity.Claims)
-                {
-                    claims.Add(new ClaimModel
-                    {
-                        Type = claim.Type,
-                        Value = claim.Value
-                    });
-                }
-
-                info.Claims = claims;
-            }
+            var manager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
+            info.Roles = manager.GetRoles(User.Identity.GetUserId());
 
             return info;
         }
@@ -59,9 +47,9 @@ namespace ParkingInfringement.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var manager = UsersDbContext.GetUserManager();
+            var manager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
 
-            var user = new IdentityUser() { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber };
+            var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber };
 
             IdentityResult result = await manager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
@@ -76,13 +64,13 @@ namespace ParkingInfringement.API.Controllers
 
         [HttpPost]
         [IdentityBasicAuthentication]
-        [Route("SendPasswordEmail")]
+        [Route("api/users/SendPasswordEmail")]
         public async Task<IHttpActionResult> SendPasswordEmail(SendPasswordBindingModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var manager = UsersDbContext.GetUserManager();
+            var manager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
             var user = await manager.FindByNameAsync(model.User.UserName);
             await manager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + model.Url + "\">here</a>");
 
@@ -91,20 +79,21 @@ namespace ParkingInfringement.API.Controllers
 
         [HttpPost]
         [IdentityBasicAuthentication]
-        [Route("SetPassword")]
+        [Route("api/users/SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IdentityResult result = await UsersDbContext.GetUserManager().AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+            var manager = new ApplicationUserManager(new MySqlUserStore<ApplicationUser>());
+            IdentityResult result = await manager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
 
             if (!result.Succeeded)
                 return GetErrorResult(result);
 
             return Ok();
         }
-        
+
         [IdentityBasicAuthentication]
         [Authorize]
         public void Put(int id, [FromBody]string value)
@@ -178,7 +167,7 @@ namespace ParkingInfringement.API.Controllers
     {
         public string UserName { get; set; }
 
-        public IEnumerable<ClaimModel> Claims { get; set; }
+        public IEnumerable<string> Roles { get; set; }
     }
 
     public class ClaimModel
